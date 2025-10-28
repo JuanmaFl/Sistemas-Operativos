@@ -1,0 +1,17 @@
+# .gitignore
+
+# Archivos de build de CMake
+/build/
+/CMakeFiles/
+CMakeCache.txt
+CTestTestfile.cmake
+cmake_install.cmake
+Makefile
+*.cbp
+*.vcxproj*
+
+# Ejecutables y archivos objeto
+*.exe
+*.obj
+*.o
+*.a
