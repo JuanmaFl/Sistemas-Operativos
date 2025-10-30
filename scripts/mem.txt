@@ -1,0 +1,82 @@
+# =========================================================
+# SCRIPT DE BENCHMARK DE MEMORIA (FIFO vs. LRU)
+# Cadena de Referencias: 1, 2, 3, 1, 2, 4, 5, 1, 3, 6, 4, 2
+# Se asume que la memoria tiene 4 MARCOS disponibles.
+# Se crean 3 procesos para tener uno en RUNNING (PID 1).
+# =========================================================
+
+# 1. Preparación
+new 10         # Crea PID 1 (Burst 10, tiempo de llegada 0)
+new 10         # Crea PID 2
+new 10         # Crea PID 3
+run 1          # Inicia PID 1 en RUNNING (T=1).
+
+echo "--- INICIO DE PRUEBA: FIFO con 4 MARCOS ---"
+set_page_algo FIFO
+memview        # Muestra el estado inicial de la memoria (debe estar vacía)
+
+# Referencia 1, 2, 3, 1, 2
+access 100     # Ref a Página 1 (Fallo 1)
+access 200     # Ref a Página 2 (Fallo 2)
+access 300     # Ref a Página 3 (Fallo 3)
+access 100     # Ref a Página 1 (Acierto)
+access 200     # Ref a Página 2 (Acierto)
+memview        # Debería mostrar P1, P2, P3 y un marco libre
+
+# Referencia 4, 5, 1, 3
+access 400     # Ref a Página 4 (Fallo 4)
+access 500     # Ref a Página 5 (Fallo 5, Reemplaza P1)
+access 100     # Ref a Página 1 (Fallo 6, Reemplaza P2)
+access 300     # Ref a Página 3 (Acierto)
+memview
+
+# Referencia 6, 4, 2
+access 600     # Ref a Página 6 (Fallo 7, Reemplaza P3)
+access 400     # Ref a Página 4 (Acierto)
+access 200     # Ref a Página 2 (Fallo 8, Reemplaza P5)
+
+stats          # Muestra el número final de fallos (Debería ser 8 para FIFO, 4 Marcos)
+echo "--- FIN DE PRUEBA: FIFO ---"
+
+
+echo "--- REINICIO DE PRUEBA: LRU con 4 MARCOS ---"
+
+# Reiniciar el proceso de memoria (esto puede requerir un comando específico si existe,
+# o se asume que un nuevo proceso tiene la memoria limpia).
+# Si no hay comando de reinicio, necesitarías salir, eliminar la cache de memoria
+# y correr el script de nuevo con el algoritmo LRU.
+# Asumimos aquí que el siguiente proceso tendrá la memoria limpia.
+
+kill 1         # Termina el PID 1
+kill 2
+kill 3
+new 10         # Nuevo PID 4
+new 10         # Nuevo PID 5
+new 10         # Nuevo PID 6
+run 1          # Pone PID 4 en RUNNING (T=1)
+
+set_page_algo LRU
+memview
+
+# Referencia 1, 2, 3, 1, 2
+access 100
+access 200
+access 300
+access 100
+access 200
+
+# Referencia 4, 5, 1, 3
+access 400
+access 500
+access 100
+access 300
+
+# Referencia 6, 4, 2
+access 600
+access 400
+access 200
+
+stats          # Muestra el número final de fallos (Debería ser 6 para LRU, 4 Marcos)
+echo "--- FIN DE PRUEBA: LRU ---"
+
+exit
