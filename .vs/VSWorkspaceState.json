@@ -7,11 +7,14 @@
   },
   "ExpandedNodes": [
     "",
-    "\\cli",
-    "\\kernel",
-    "\\tests",
+    "\\modules",
+    "\\modules\\cpu",
+    "\\modules\\disk",
+    "\\modules\\io",
+    "\\modules\\mem",
+    "\\scripts",
     "\\tests\\fixtures"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

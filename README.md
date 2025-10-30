@@ -1,8 +1,11 @@
-# 💻 Simulador de Núcleo de Sistema Operativo (Kernel-Sim)
+#  Simulador de Núcleo de Sistema Operativo (Kernel-Sim)
 
 Este proyecto es una simulación modular de los componentes clave de un sistema operativo simplificado, desarrollado en C++17. Incluye módulos para la gestión de procesos, planificación (Round Robin, SJF), memoria virtual con paginación (FIFO, LRU), sincronización y E/S.
+ 
+# Realizado por:
+Laura Sofia Aceros y Juan Manuel Florez
 
-## ⚙️ Stack Tecnológico
+##  Stack Tecnológico
 
 * **Lenguaje:** C++17
 * **Sistema de Build:** CMake (v3.10+)
@@ -11,7 +14,7 @@ Este proyecto es una simulación modular de los componentes clave de un sistema 
 
 ---
 
-## 📂 Estructura del Proyecto
+##  Estructura del Proyecto
 
 El código está organizado modularmente, reflejando las capas de un Kernel:
 
@@ -25,7 +28,7 @@ El código está organizado modularmente, reflejando las capas de un Kernel:
 
 ---
 
-## 🛠️ Requisitos e Instalación
+## Requisitos e Instalación
 
 Para compilar y ejecutar el proyecto, se necesita un entorno de desarrollo C++ compatible con MSYS2/MinGW.
 
@@ -48,7 +51,7 @@ Para compilar y ejecutar el proyecto, se necesita un entorno de desarrollo C++ c
 
 ---
 
-## 🚀 Compilación y Ejecución
+##  Compilación y Ejecución
 
 Siga estos pasos desde la terminal **MSYS2 UCRT64**.
 
@@ -66,6 +69,7 @@ cd build
 
 # Ejecutar CMake para generar los Makefiles
 cmake ..
+```
 
 ### 2. Compilar el Código
 
@@ -88,12 +92,49 @@ Bash
 # Ejemplo de uso (una vez implementados los comandos)
 ./kernel-sim.exe --load processes.txt --scheduler RR
 
-4. Ejecutar las Pruebas
-Puede usar CTest (incluido con CMake) para ejecutar automáticamente todas las pruebas de GTest definidas en el proyecto.
 
-Bash
+---
 
-# Ejecutar la suite de pruebas
-ctest
-📚 Documentación
-Consulte la carpeta docs/ para obtener una descripción más detallada de la arquitectura de cada módulo y los algoritmos implementados.
+##  Novedades de la Versión (Segunda entrega)
+
+Esta entrega parcial se enfoca en la implementación del esqueleto del simulador, la funcionalidad de paginación y la sincronización, cumpliendo con los siguientes objetivos del proyecto:
+
+### 1.  Planificación de Procesos (CPU)
+
+| Objetivo del Proyecto | Implementación en Kernel-Sim |
+| :--- | :--- |
+| Construir el esqueleto y un planificador simple (**Round Robin**). | Planificador **RR** funcional con `quantum` fijo y `run n` implementado. |
+| Agregar **SJF no expropiativo** ("al menos dos"). | Implementado **SJF No Expropiativo** como segundo algoritmo. |
+| Tener una **CLI mínima** para crear/listar/terminar. | CLI básica con comandos `new`, `ps`, `tick`, `kill`, `set_algo`, `set_quantum`. |
+| Pruebas: ver **tiempos de espera/retorno**. | El sistema registra y puede mostrar métricas iniciales (tiempo de espera/promedio). |
+
+### 2. Gestión de Memoria (Paginación)
+
+| Objetivo del Proyecto | Implementación en Kernel-Sim |
+| :--- | :--- |
+| Implementar el primer algoritmo (**FIFO** o **LRU**). | **FIFO** integrado: Gestor de marcos y tabla de páginas implementado. |
+| Implementar algoritmo 2 (**LRU** o PFF). | **LRU** implementado, cumpliendo el requisito de "al menos dos" algoritmos. |
+| Visualizar marcos, **fallos de página** y **tasa de aciertos**. | Registro de **fallos totales** y **tasa de aciertos** vía `access <dir>` y `memview`. |
+| **Gráficas simples** (CSV → script) de fallos vs. tamaño de marcos. | **Gráfica generada** comparando el rendimiento de FIFO y LRU. |
+
+### 3.  Sincronización (I/O)
+
+| Objetivo del Proyecto | Implementación en Kernel-Sim |
+| :--- | :--- |
+| Integrar mecanismos de sincronización (**semáforos** o **mutex**). | Implementado un *mini-framework* de semáforos/mutex simulados. |
+| Resolver un problema canónico (**Productor–Consumidor**). | Implementación del problema **Productor-Consumidor** sobre un buffer simulado. |
+| Exponer la funcionalidad vía CLI. | Comandos `produce`, `consume`, `sync_stat` funcionales. |
+
+### 4.  Documentación
+
+* Se documentó el diseño del planificador (RR/SJF) y sus supuestos en `docs/modules/cpu.md`.
+* Se documentó el diseño de sincronización y sus **invariantes** en `docs/modules/io.md`.
+
+---
+
+## 📊 Análisis de Memoria
+
+El análisis empírico entre FIFO y LRU demostró la superioridad de LRU, confirmando el cumplimiento del objetivo de **Visualización de Resultados**.
+
+
+

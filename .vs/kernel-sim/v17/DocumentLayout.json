@@ -3,59 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\jmflo\\kernel-sim\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\tests\\test_integration.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\test_integration.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\core.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\core.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\main.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\main.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\utils.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\utils.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\commands.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\commands.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|CMake Overview Pages||{B1CAA5B0-FEB1-4350-8AB9-F895876842F2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\examples\\memory_allocation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:examples\\memory_allocation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\examples\\simple_process.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:examples\\simple_process.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\tests\\fixtures\\test_data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\fixtures\\test_data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\scripts\\mem.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\mem.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\swap.h||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -66,16 +19,56 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\mem\\swap.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\page_table.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\mem\\page_table.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\page_table.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\mem\\page_table.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\memory_manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\mem\\memory_manager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\memory_manager.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\mem\\memory_manager.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\io\\io_scheduler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\io\\io_scheduler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\io\\io_scheduler.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\io\\io_scheduler.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\io\\device_driver.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\io\\device_driver.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\io\\device_driver .h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\io\\device_driver .h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\disk\\filesystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\disk\\filesystem.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\disk\\block_manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager..h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\disk\\block_manager..h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\disk\\block_manager.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\processor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\cpu\\processor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\processor.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -86,8 +79,20 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\cpu\\context_switch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\sycall_handler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\sycall_handler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\context_switch.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\cpu\\context_switch.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\syscall_handler.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\syscall_handler.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\sync.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\sync.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\sync.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\sync.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\scheduler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -98,60 +103,111 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\scheduler.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\disk.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\modules\\disk.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\process.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\process.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\io.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\modules\\io.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\memory.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\modules\\memory.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\core.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\core.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\cpu.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\modules\\cpu.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\utils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\architecture.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\architecture.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\utils.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\utils.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\main.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\main.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\commands.h||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\commands.h||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\disk\\filesystem.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\cli\\commands.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cli\\commands.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\io\\device_driver.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\io\\device_driver.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\memory\\memory.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\modules\\memory\\memory.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\io\\io_scheduler.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\io\\io_scheduler.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\memory\\grafico_fallos_memoria.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\modules\\memory\\grafico_fallos_memoria.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\page_table.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\mem\\page_table.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\LICENSE||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LICENSE||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\memory_manager.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\mem\\memory_manager.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\context_switch.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\cpu\\context_switch.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\syscall_handler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\syscall_handler.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\kernel\\syscall_handler.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:kernel\\syscall_handler.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\examples\\io_operations.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:examples\\io_operations.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\disk\\disk.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\modules\\disk\\disk.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\IO\\io.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\modules\\IO\\io.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\index.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\CPU\\cpu.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\modules\\CPU\\cpu.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\docs\\architecture.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docs\\architecture.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\tests\\test_integration.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\test_integration.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\tests\\fixtures\\test_data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\fixtures\\test_data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\examples\\simple_process.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:examples\\simple_process.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\examples\\memory_allocation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:examples\\memory_allocation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|CMake Overview Pages||{B1CAA5B0-FEB1-4350-8AB9-F895876842F2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:modules\\disk\\block_manager.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -169,303 +225,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "commands.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\commands.cpp",
-              "RelativeDocumentMoniker": "cli\\commands.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\commands.cpp",
-              "RelativeToolTip": "cli\\commands.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T15:19:50.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CMake Overview Pages",
-              "DocumentMoniker": "CMake Overview Pages",
-              "ToolTip": "CMake Overview Pages",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-28T15:10:31.136Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CMakeLists.txt",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\CMakeLists.txt",
-              "RelativeDocumentMoniker": "CMakeLists.txt",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\CMakeLists.txt",
-              "RelativeToolTip": "CMakeLists.txt",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAiwGwAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-10-28T15:10:22.654Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "utils.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\utils.cpp",
-              "RelativeDocumentMoniker": "cli\\utils.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\utils.cpp",
-              "RelativeToolTip": "cli\\utils.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "memory_manager.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\memory_manager.cpp",
+              "RelativeDocumentMoniker": "modules\\mem\\memory_manager.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\memory_manager.cpp",
+              "RelativeToolTip": "modules\\mem\\memory_manager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T14:46:56.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "core.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\core.cpp",
-              "RelativeDocumentMoniker": "kernel\\core.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\core.cpp",
-              "RelativeToolTip": "kernel\\core.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T14:40:48.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "test_integration.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\tests\\test_integration.cpp",
-              "RelativeDocumentMoniker": "tests\\test_integration.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\tests\\test_integration.cpp",
-              "RelativeToolTip": "tests\\test_integration.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T15:06:07.084Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\README.md",
-              "RelativeDocumentMoniker": "README.md",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\README.md",
-              "RelativeToolTip": "README.md",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-10-28T15:09:21.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-28T15:10:07.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "utils.h",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\utils.h",
-              "RelativeDocumentMoniker": "cli\\utils.h",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\utils.h",
-              "RelativeToolTip": "cli\\utils.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T15:20:24.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "core.h",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\core.h",
-              "RelativeDocumentMoniker": "kernel\\core.h",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\core.h",
-              "RelativeToolTip": "kernel\\core.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T15:21:25.796Z",
+              "WhenOpened": "2025-10-28T14:42:47.957Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\main.cpp",
-              "RelativeDocumentMoniker": "cli\\main.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\main.cpp",
-              "RelativeToolTip": "cli\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T14:46:34.728Z",
+              "Title": "memory_manager.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\memory_manager.h",
+              "RelativeDocumentMoniker": "modules\\mem\\memory_manager.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\memory_manager.h",
+              "RelativeToolTip": "modules\\mem\\memory_manager.h",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAEsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T18:25:03.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "memory_allocation.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\examples\\memory_allocation.cpp",
-              "RelativeDocumentMoniker": "examples\\memory_allocation.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\examples\\memory_allocation.cpp",
-              "RelativeToolTip": "examples\\memory_allocation.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T15:08:30.656Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "simple_process.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\examples\\simple_process.cpp",
-              "RelativeDocumentMoniker": "examples\\simple_process.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\examples\\simple_process.cpp",
-              "RelativeToolTip": "examples\\simple_process.cpp",
+              "DocumentIndex": 5,
+              "Title": "page_table.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\page_table.cpp",
+              "RelativeDocumentMoniker": "modules\\mem\\page_table.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\page_table.cpp",
+              "RelativeToolTip": "modules\\mem\\page_table.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T15:08:15.54Z",
+              "WhenOpened": "2025-10-28T14:42:59.966Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "test_data.json",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\tests\\fixtures\\test_data.json",
-              "RelativeDocumentMoniker": "tests\\fixtures\\test_data.json",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\tests\\fixtures\\test_data.json",
-              "RelativeToolTip": "tests\\fixtures\\test_data.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-28T15:06:32.514Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "swap.h",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\swap.h",
-              "RelativeDocumentMoniker": "modules\\mem\\swap.h",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\swap.h",
-              "RelativeToolTip": "modules\\mem\\swap.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "page_table.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\page_table.h",
+              "RelativeDocumentMoniker": "modules\\mem\\page_table.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\page_table.h",
+              "RelativeToolTip": "modules\\mem\\page_table.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T15:05:07.591Z",
+              "WhenOpened": "2025-10-28T18:12:04.182Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "filesystem.h",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.h",
-              "RelativeDocumentMoniker": "modules\\disk\\filesystem.h",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.h",
-              "RelativeToolTip": "modules\\disk\\filesystem.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T15:01:41.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "block_manager..h",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager..h",
-              "RelativeDocumentMoniker": "modules\\disk\\block_manager..h",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager..h",
-              "RelativeToolTip": "modules\\disk\\block_manager..h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T15:01:15.349Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "context_switch.h",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\context_switch.h",
-              "RelativeDocumentMoniker": "modules\\cpu\\context_switch.h",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\context_switch.h",
-              "RelativeToolTip": "modules\\cpu\\context_switch.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T15:00:05.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "sycall_handler.h",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\sycall_handler.h",
-              "RelativeDocumentMoniker": "kernel\\sycall_handler.h",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\sycall_handler.h",
-              "RelativeToolTip": "kernel\\sycall_handler.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T14:57:06.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "scheduler.h",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\scheduler.h",
-              "RelativeDocumentMoniker": "kernel\\scheduler.h",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\scheduler.h",
-              "RelativeToolTip": "kernel\\scheduler.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T14:55:17.852Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "disk.md",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\disk.md",
-              "RelativeDocumentMoniker": "docs\\modules\\disk.md",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\disk.md",
-              "RelativeToolTip": "docs\\modules\\disk.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-10-28T14:49:16.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "io.md",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\io.md",
-              "RelativeDocumentMoniker": "docs\\modules\\io.md",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\io.md",
-              "RelativeToolTip": "docs\\modules\\io.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-10-28T14:49:04.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "memory.md",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\memory.md",
-              "RelativeDocumentMoniker": "docs\\modules\\memory.md",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\memory.md",
-              "RelativeToolTip": "docs\\modules\\memory.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-10-28T14:48:48.222Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 3,
               "Title": "swap.cpp",
               "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\swap.cpp",
               "RelativeDocumentMoniker": "modules\\mem\\swap.cpp",
@@ -478,20 +290,163 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "cpu.md",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\cpu.md",
-              "RelativeDocumentMoniker": "docs\\modules\\cpu.md",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\cpu.md",
-              "RelativeToolTip": "docs\\modules\\cpu.md",
+              "DocumentIndex": 2,
+              "Title": "swap.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\swap.h",
+              "RelativeDocumentMoniker": "modules\\mem\\swap.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\swap.h",
+              "RelativeToolTip": "modules\\mem\\swap.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-10-28T14:48:34.615Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T15:05:07.591Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 1,
+              "Title": "mem.txt",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\scripts\\mem.txt",
+              "RelativeDocumentMoniker": "scripts\\mem.txt",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\scripts\\mem.txt",
+              "RelativeToolTip": "scripts\\mem.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-10-30T06:38:21.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAAIMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-28T15:09:21.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "io_scheduler.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\io_scheduler.h",
+              "RelativeDocumentMoniker": "modules\\io\\io_scheduler.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\io_scheduler.h",
+              "RelativeToolTip": "modules\\io\\io_scheduler.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-30T04:56:53.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "io_scheduler.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\io_scheduler.cpp",
+              "RelativeDocumentMoniker": "modules\\io\\io_scheduler.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\io_scheduler.cpp",
+              "RelativeToolTip": "modules\\io\\io_scheduler.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T14:44:42.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "device_driver.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\device_driver.cpp",
+              "RelativeDocumentMoniker": "modules\\io\\device_driver.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\device_driver.cpp",
+              "RelativeToolTip": "modules\\io\\device_driver.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T14:44:59.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "device_driver .h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\device_driver .h",
+              "RelativeDocumentMoniker": "modules\\io\\device_driver .h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\device_driver .h",
+              "RelativeToolTip": "modules\\io\\device_driver .h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-30T04:56:56.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "filesystem.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.h",
+              "RelativeDocumentMoniker": "modules\\disk\\filesystem.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.h",
+              "RelativeToolTip": "modules\\disk\\filesystem.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T15:01:41.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "filesystem.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.cpp",
+              "RelativeDocumentMoniker": "modules\\disk\\filesystem.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.cpp",
+              "RelativeToolTip": "modules\\disk\\filesystem.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T14:45:32.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "block_manager.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager.cpp",
+              "RelativeDocumentMoniker": "modules\\disk\\block_manager.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager.cpp",
+              "RelativeToolTip": "modules\\disk\\block_manager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-30T04:57:03.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "block_manager..h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager..h",
+              "RelativeDocumentMoniker": "modules\\disk\\block_manager..h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager..h",
+              "RelativeToolTip": "modules\\disk\\block_manager..h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T15:01:15.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "processor.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\processor.h",
+              "RelativeDocumentMoniker": "modules\\cpu\\processor.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\processor.h",
+              "RelativeToolTip": "modules\\cpu\\processor.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-30T04:57:08.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "processor.cpp",
               "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\processor.cpp",
               "RelativeDocumentMoniker": "modules\\cpu\\processor.cpp",
@@ -505,134 +460,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "block_manager.py",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager.py",
-              "RelativeDocumentMoniker": "modules\\disk\\block_manager.py",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager.py",
-              "RelativeToolTip": "modules\\disk\\block_manager.py",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMtSURBVDhPrZS9T1tnFMZ/1/cLGxy7BNuJIeCG2hIiSSWqRmmR8Fh16lhVVVTRIR34Ezo2kSqUqUJeKkHLEqlDWZAyUJZEoUNaoTatXEgsQykGFFyw8de997337RA5MeYqUx/pDOc55zx6znmlF/5PSCmVzjybzX4/NTV1U9f1TvoUKpWKrFard5aXl\u002B/u7e1Vu\u002BtaNzE9PU0ikeimX2J1dVUWi8UvVFWVKysr3xQKhXJn/YwgQKFQ6KZQVZVUKoWu64FsNhtNp9O3LMsKapo2u7Gxcdju8xVMJpPdFIry6jqGYeiTk5MDuq5/IqW0hBBfFwqFOkCgc6gNwzDORPuuqqqytLTE3Nycura2diEUCk2Yphlvz/o63Nzc7KbQNI10Os27N95n4vp7aAGFZv3Emp\u002Bf//tUX2fSxtjYWDdFzRL8lD9kv9qk2bTRA3AxrGoXh4b7A4FXi/oK\u002Bjm0\u002BpI8269xUKnz\u002BOk\u002BwrGJ9Rn6R\u002BNDI/F4vK/d53vDVCp1JioNwaONPfI7ZTzh4AmXaq2hNEQgGA6HQ\u002B1ZX0EA13VxUfjrucO9xwf8tl3m2qUoE6l\u002BzvfqCOEghCAWrV9d\u002Bu7mz17zjyee5w37rry1tQXAbkvnxycn7JZPEMLGdRyE4\u002BA6Np7r4CkKhvIcmuvQWh8n9uWsr8NMJkMmk6Ehezg4riGEg\u002BcINDwiQY1ISCca0nk7FeJasgpuE6x/wN75wNdhPp8HYGe3iWXZeEIw3K8xk20SVI\u002BR0gPpETWOGAwegGi8EHWPI691ODKYwAiAEA63sgbvXPiV8dgzrsQLXBnIM9RbRBH/gqiBWwc9eeQraNs2tm0z8obJ5YEgYVMlds5DkS54NggLPA9cQAZA6tBz1cUY/NZ35VKpBIAJfJ69TMWCRGQLWja4LVAioARBV8DMHGG\u002B\u002BSc9bz1dXFyc9RUcHR09lSuKgumVJLW6gtsC9xB6b4BUQD2/88P93a8ePLj3KJfLNc4ILiwsvPwIOvHZpx9uXzIHU9i/v3iAk1\u002BQfdelG5woP3x4u5jL5RrdM6\u002BFlPKc9Jy7srW9J2vrnrRK21LK\u002B1LKj2dmZlLtvv8AoKdgTW7XN1wAAAAASUVORK5CYII=",
-              "WhenOpened": "2025-10-28T14:45:46.358Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "architecture.md",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\architecture.md",
-              "RelativeDocumentMoniker": "docs\\architecture.md",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\architecture.md",
-              "RelativeToolTip": "docs\\architecture.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-10-28T14:48:08.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "index.md",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\index.md",
-              "RelativeDocumentMoniker": "docs\\index.md",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\index.md",
-              "RelativeToolTip": "docs\\index.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-10-28T14:47:53.671Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "commands.h",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\commands.h",
-              "RelativeDocumentMoniker": "cli\\commands.h",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\commands.h",
-              "RelativeToolTip": "cli\\commands.h",
+              "Title": "context_switch.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\context_switch.h",
+              "RelativeDocumentMoniker": "modules\\cpu\\context_switch.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\context_switch.h",
+              "RelativeToolTip": "modules\\cpu\\context_switch.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-28T14:46:44.145Z",
+              "WhenOpened": "2025-10-28T15:00:05.744Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "scheduler.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\scheduler.cpp",
-              "RelativeDocumentMoniker": "kernel\\scheduler.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\scheduler.cpp",
-              "RelativeToolTip": "kernel\\scheduler.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T14:40:59.889Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "filesystem.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.cpp",
-              "RelativeDocumentMoniker": "modules\\disk\\filesystem.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\filesystem.cpp",
-              "RelativeToolTip": "modules\\disk\\filesystem.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T14:45:32.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "device_driver.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\device_driver.cpp",
-              "RelativeDocumentMoniker": "modules\\io\\device_driver.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\device_driver.cpp",
-              "RelativeToolTip": "modules\\io\\device_driver.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T14:44:59.562Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "io_scheduler.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\io_scheduler.cpp",
-              "RelativeDocumentMoniker": "modules\\io\\io_scheduler.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\io\\io_scheduler.cpp",
-              "RelativeToolTip": "modules\\io\\io_scheduler.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T14:44:42.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "page_table.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\page_table.cpp",
-              "RelativeDocumentMoniker": "modules\\mem\\page_table.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\page_table.cpp",
-              "RelativeToolTip": "modules\\mem\\page_table.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T14:42:59.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "memory_manager.cpp",
-              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\memory_manager.cpp",
-              "RelativeDocumentMoniker": "modules\\mem\\memory_manager.cpp",
-              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\mem\\memory_manager.cpp",
-              "RelativeToolTip": "modules\\mem\\memory_manager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-28T14:42:47.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 19,
               "Title": "context_switch.cpp",
               "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\cpu\\context_switch.cpp",
               "RelativeDocumentMoniker": "modules\\cpu\\context_switch.cpp",
@@ -645,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 20,
               "Title": "syscall_handler.cpp",
               "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\syscall_handler.cpp",
               "RelativeDocumentMoniker": "kernel\\syscall_handler.cpp",
@@ -655,6 +495,403 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-28T14:41:12.816Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "sync.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\sync.h",
+              "RelativeDocumentMoniker": "kernel\\sync.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\sync.h",
+              "RelativeToolTip": "kernel\\sync.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T22:41:04.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "sync.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\sync.cpp",
+              "RelativeDocumentMoniker": "kernel\\sync.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\sync.cpp",
+              "RelativeToolTip": "kernel\\sync.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T22:40:54.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "scheduler.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\scheduler.h",
+              "RelativeDocumentMoniker": "kernel\\scheduler.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\scheduler.h",
+              "RelativeToolTip": "kernel\\scheduler.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T14:55:17.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "scheduler.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\scheduler.cpp",
+              "RelativeDocumentMoniker": "kernel\\scheduler.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\scheduler.cpp",
+              "RelativeToolTip": "kernel\\scheduler.cpp",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAAANcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T14:40:59.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "process.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\process.h",
+              "RelativeDocumentMoniker": "kernel\\process.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\process.h",
+              "RelativeToolTip": "kernel\\process.h",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAADEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T17:02:09.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "core.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\core.h",
+              "RelativeDocumentMoniker": "kernel\\core.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\core.h",
+              "RelativeToolTip": "kernel\\core.h",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAD4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T15:21:25.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "core.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\core.cpp",
+              "RelativeDocumentMoniker": "kernel\\core.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\core.cpp",
+              "RelativeToolTip": "kernel\\core.cpp",
+              "ViewState": "AgIAADUBAAAAAAAAAAAAADQBAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T14:40:48.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "utils.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\utils.h",
+              "RelativeDocumentMoniker": "cli\\utils.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\utils.h",
+              "RelativeToolTip": "cli\\utils.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T15:20:24.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "utils.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\utils.cpp",
+              "RelativeDocumentMoniker": "cli\\utils.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\utils.cpp",
+              "RelativeToolTip": "cli\\utils.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T14:46:56.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "main.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\main.h",
+              "RelativeDocumentMoniker": "cli\\main.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\main.h",
+              "RelativeToolTip": "cli\\main.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-30T04:23:32.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\main.cpp",
+              "RelativeDocumentMoniker": "cli\\main.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\main.cpp",
+              "RelativeToolTip": "cli\\main.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T14:46:34.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "commands.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\commands.h",
+              "RelativeDocumentMoniker": "cli\\commands.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\commands.h",
+              "RelativeToolTip": "cli\\commands.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T14:46:44.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "commands.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\cli\\commands.cpp",
+              "RelativeDocumentMoniker": "cli\\commands.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\cli\\commands.cpp",
+              "RelativeToolTip": "cli\\commands.cpp",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAAMgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T15:19:50.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "memory.md",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\memory\\memory.md",
+              "RelativeDocumentMoniker": "docs\\modules\\memory\\memory.md",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\memory\\memory.md",
+              "RelativeToolTip": "docs\\modules\\memory\\memory.md",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAwDoAAADEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-28T14:48:48.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "grafico_fallos_memoria.png",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\memory\\grafico_fallos_memoria.png",
+              "RelativeDocumentMoniker": "docs\\modules\\memory\\grafico_fallos_memoria.png",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\memory\\grafico_fallos_memoria.png",
+              "RelativeToolTip": "docs\\modules\\memory\\grafico_fallos_memoria.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-10-30T07:18:33.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "LICENSE",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\LICENSE",
+              "RelativeDocumentMoniker": "LICENSE",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\LICENSE",
+              "RelativeToolTip": "LICENSE",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-30T06:53:26.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "CMakeLists.txt",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\CMakeLists.txt",
+              "RelativeToolTip": "CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-10-28T15:10:22.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "syscall_handler.h",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\kernel\\syscall_handler.h",
+              "RelativeDocumentMoniker": "kernel\\syscall_handler.h",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\kernel\\syscall_handler.h",
+              "RelativeToolTip": "kernel\\syscall_handler.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-28T14:57:06.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "io_operations.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\examples\\io_operations.cpp",
+              "RelativeDocumentMoniker": "examples\\io_operations.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\examples\\io_operations.cpp",
+              "RelativeToolTip": "examples\\io_operations.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-30T04:24:07.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "disk.md",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\disk\\disk.md",
+              "RelativeDocumentMoniker": "docs\\modules\\disk\\disk.md",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\disk\\disk.md",
+              "RelativeToolTip": "docs\\modules\\disk\\disk.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-28T14:49:16.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "io.md",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\IO\\io.md",
+              "RelativeDocumentMoniker": "docs\\modules\\IO\\io.md",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\IO\\io.md",
+              "RelativeToolTip": "docs\\modules\\IO\\io.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-28T14:49:04.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "index.md",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\index.md",
+              "RelativeDocumentMoniker": "docs\\index.md",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\index.md",
+              "RelativeToolTip": "docs\\index.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-28T14:47:53.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "cpu.md",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\CPU\\cpu.md",
+              "RelativeDocumentMoniker": "docs\\modules\\CPU\\cpu.md",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\modules\\CPU\\cpu.md",
+              "RelativeToolTip": "docs\\modules\\CPU\\cpu.md",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-28T14:48:34.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "architecture.md",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\docs\\architecture.md",
+              "RelativeDocumentMoniker": "docs\\architecture.md",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\docs\\architecture.md",
+              "RelativeToolTip": "docs\\architecture.md",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwCsAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-28T14:48:08.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "test_integration.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\tests\\test_integration.cpp",
+              "RelativeDocumentMoniker": "tests\\test_integration.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\tests\\test_integration.cpp",
+              "RelativeToolTip": "tests\\test_integration.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T15:06:07.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "test_data.json",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\tests\\fixtures\\test_data.json",
+              "RelativeDocumentMoniker": "tests\\fixtures\\test_data.json",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\tests\\fixtures\\test_data.json",
+              "RelativeToolTip": "tests\\fixtures\\test_data.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T15:06:32.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "simple_process.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\examples\\simple_process.cpp",
+              "RelativeDocumentMoniker": "examples\\simple_process.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\examples\\simple_process.cpp",
+              "RelativeToolTip": "examples\\simple_process.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T15:08:15.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "memory_allocation.cpp",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\examples\\memory_allocation.cpp",
+              "RelativeDocumentMoniker": "examples\\memory_allocation.cpp",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\examples\\memory_allocation.cpp",
+              "RelativeToolTip": "examples\\memory_allocation.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-28T15:08:30.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "CMake Overview Pages",
+              "DocumentMoniker": "CMake Overview Pages",
+              "ToolTip": "CMake Overview Pages",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-28T15:10:31.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-28T15:10:07.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "block_manager.py",
+              "DocumentMoniker": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager.py",
+              "RelativeDocumentMoniker": "modules\\disk\\block_manager.py",
+              "ToolTip": "C:\\Users\\jmflo\\kernel-sim\\modules\\disk\\block_manager.py",
+              "RelativeToolTip": "modules\\disk\\block_manager.py",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMtSURBVDhPrZS9T1tnFMZ/1/cLGxy7BNuJIeCG2hIiSSWqRmmR8Fh16lhVVVTRIR34Ezo2kSqUqUJeKkHLEqlDWZAyUJZEoUNaoTatXEgsQykGFFyw8de997337RA5MeYqUx/pDOc55zx6znmlF/5PSCmVzjybzX4/NTV1U9f1TvoUKpWKrFard5aXl\u002B/u7e1Vu\u002BtaNzE9PU0ikeimX2J1dVUWi8UvVFWVKysr3xQKhXJn/YwgQKFQ6KZQVZVUKoWu64FsNhtNp9O3LMsKapo2u7Gxcdju8xVMJpPdFIry6jqGYeiTk5MDuq5/IqW0hBBfFwqFOkCgc6gNwzDORPuuqqqytLTE3Nycura2diEUCk2Yphlvz/o63Nzc7KbQNI10Os27N95n4vp7aAGFZv3Emp\u002Bf//tUX2fSxtjYWDdFzRL8lD9kv9qk2bTRA3AxrGoXh4b7A4FXi/oK\u002Bjm0\u002BpI8269xUKnz\u002BOk\u002BwrGJ9Rn6R\u002BNDI/F4vK/d53vDVCp1JioNwaONPfI7ZTzh4AmXaq2hNEQgGA6HQ\u002B1ZX0EA13VxUfjrucO9xwf8tl3m2qUoE6l\u002BzvfqCOEghCAWrV9d\u002Bu7mz17zjyee5w37rry1tQXAbkvnxycn7JZPEMLGdRyE4\u002BA6Np7r4CkKhvIcmuvQWh8n9uWsr8NMJkMmk6Ehezg4riGEg\u002BcINDwiQY1ISCca0nk7FeJasgpuE6x/wN75wNdhPp8HYGe3iWXZeEIw3K8xk20SVI\u002BR0gPpETWOGAwegGi8EHWPI691ODKYwAiAEA63sgbvXPiV8dgzrsQLXBnIM9RbRBH/gqiBWwc9eeQraNs2tm0z8obJ5YEgYVMlds5DkS54NggLPA9cQAZA6tBz1cUY/NZ35VKpBIAJfJ69TMWCRGQLWja4LVAioARBV8DMHGG\u002B\u002BSc9bz1dXFyc9RUcHR09lSuKgumVJLW6gtsC9xB6b4BUQD2/88P93a8ePLj3KJfLNc4ILiwsvPwIOvHZpx9uXzIHU9i/v3iAk1\u002BQfdelG5woP3x4u5jL5RrdM6\u002BFlPKc9Jy7srW9J2vrnrRK21LK\u002B1LKj2dmZlLtvv8AoKdgTW7XN1wAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-10-28T14:45:46.358Z"
             },
             {
               "$type": "Bookmark",

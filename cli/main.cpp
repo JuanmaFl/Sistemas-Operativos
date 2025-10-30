@@ -1,28 +1,38 @@
-// cli/main.cpp
 #include <iostream>
+#include <string>
+#include <vector>
 
-// Incluir el Kernel para inicializar la simulaci髇
-#include "kernel/core.h" 
+// Incluir el Kernel y la funci贸n de manejo de comandos
+#include "kernel/core.h"
+#include "commands.h" 
 
-// Definir la funci髇 principal (implementada en cli/commands.cpp)
-void run_cli_commands();
+//  IMPORTANTE: Instancia global del kernel
+// Esto permite que la funci贸n handle_command (en commands.cpp) acceda al kernel.
+KernelSimulator kernel;
 
 int main(int argc, char* argv[]) {
-    std::cout << "========================================" << std::endl;
-    std::cout << "  Simulador de N鷆leo (Kernel-Sim) v0.1 " << std::endl;
-    std::cout << "========================================" << std::endl;
+    // El constructor de 'kernel' ya imprime la cabecera.
 
-    // TODO: Inicializar el Kernel
-    KernelSimulator kernel;
-
-    // TODO: Procesar argumentos de l韓ea de comandos
+    // Si se dan argumentos (ej. ./kernel-sim.exe --load file.txt), podemos procesarlos.
     if (argc > 1) {
-        // L骻ica de CLI
-        run_cli_commands();
-    }
-    else {
-        std::cout << "Use 'kernel-sim --help' para ver los comandos." << std::endl;
+        // Por ahora, solo muestra que no hay soporte avanzado y ejecuta la l贸gica principal
+        std::cout << "[INFO] Argumentos de l铆nea de comandos detectados. Procesando..." << std::endl;
+        // M谩s tarde, aqu铆 se llamar铆a a una funci贸n para parsear 'argv'
     }
 
-    return 0;
+    std::cout << "\nUse 'help' para ver los comandos. Inicie con 'new <burst>'." << std::endl;
+
+    
+    std::string line;
+    while (true) {
+        std::cout << "sim> ";
+        if (!std::getline(std::cin, line)) {
+            break; // Sale si falla la lectura (ej. EOF)
+        }
+
+        // La funci贸n implementada en commands.cpp maneja la entrada
+        handle_command(line);
+    }
+
+    return 0; // Se llama al destructor del 'kernel' al salir.
 }
