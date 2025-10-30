@@ -132,9 +132,10 @@ Esta entrega parcial se enfoca en la implementación del esqueleto del simulador
 
 ---
 
-## 📊 Análisis de Memoria
+##  Análisis de Memoria
 
 El análisis empírico entre FIFO y LRU demostró la superioridad de LRU, confirmando el cumplimiento del objetivo de **Visualización de Resultados**.
+
 
 
 
