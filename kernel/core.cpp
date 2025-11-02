@@ -20,6 +20,8 @@ KernelSimulator::KernelSimulator()
     std::cout << " Simulador de Nucleo (Kernel-Sim) v0.1" << std::endl;
     std::cout << "========================================" << std::endl;
     std::cout << "[SCHEDULER] Inicializado con algoritmo RR (Quantum: 3)." << std::endl; // Información de inicio agregada
+    disk_scheduler = std::make_unique<DiskScheduler>(50, DiskAlgorithm::FCFS);
+    std::cout << "[DISK] Planificador de disco inicializado." << std::endl;
     std::cout << "Kernel Simulator inicializado." << std::endl;
 }
 
@@ -343,4 +345,74 @@ void KernelSimulator::print_pc_status() const {
     empty.print_status("Empty");
     full.print_status("Full");
     std::cout << "---------------------------------------" << std::endl;
+}
+
+
+void KernelSimulator::disk_request(int cylinder) {
+    int pid = get_running_process_id();
+    if (pid == -1) {
+        std::cout << "[DISK ERROR] No hay proceso en ejecución para realizar solicitud." << std::endl;
+        return;
+    }
+    disk_scheduler->add_request(pid, cylinder, current_time);
+}
+
+void KernelSimulator::disk_request(int pid, int cylinder) {
+    disk_scheduler->add_request(pid, cylinder, current_time);
+}
+
+void KernelSimulator::process_disk_request() {
+    disk_scheduler->process_next_request(current_time);
+}
+
+void KernelSimulator::print_disk_status() const {
+    disk_scheduler->print_status();
+}
+
+void KernelSimulator::print_disk_stats() const {
+    disk_scheduler->print_stats();
+}
+
+void KernelSimulator::visualize_disk() const {
+    disk_scheduler->visualize_disk();
+}
+
+void KernelSimulator::start_philosophers() {
+    if (!dining_philosophers) {
+        dining_philosophers = std::make_unique<DiningPhilosophers>();
+    }
+    dining_philosophers->start_simulation();
+}
+
+void KernelSimulator::stop_philosophers() {
+    if (dining_philosophers) {
+        dining_philosophers->stop_simulation();
+    }
+}
+
+void KernelSimulator::philosopher_think(int id) {
+    if (dining_philosophers && dining_philosophers->is_active()) {
+        dining_philosophers->philosopher_think(id);
+    }
+    else {
+        std::cout << "[ERROR] Simulación de filósofos no iniciada. Use 'phil start'." << std::endl;
+    }
+}
+
+void KernelSimulator::philosopher_eat(int id) {
+    if (dining_philosophers && dining_philosophers->is_active()) {
+        dining_philosophers->philosopher_eat(id);
+    }
+    else {
+        std::cout << "[ERROR] Simulación de filósofos no iniciada. Use 'phil start'." << std::endl;
+    }
+}
+
+void KernelSimulator::print_philosophers_status() const {
+    if (dining_philosophers) {
+        dining_philosophers->print_status();
+    }
+    else {
+        std::cout << "[INFO] Simulación de filósofos no inicializada." << std::endl;
+    }
 }

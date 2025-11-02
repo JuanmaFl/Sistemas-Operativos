@@ -15,3 +15,12 @@ Makefile
 *.obj
 *.o
 *.a
+# Ignorar carpetas de Visual Studio/IDE
+.vs/
+*.ipch
+
+# También es buena idea ignorar todos los archivos de build:
+build/
+out/
+*.exe
+*.obj

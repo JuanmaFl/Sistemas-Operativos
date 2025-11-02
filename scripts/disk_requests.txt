@@ -1,0 +1,116 @@
+# scripts/disk_requests.txt
+# Script de pruebas para planificación de disco
+# Formato: <comando>
+# Puedes ejecutar esto línea por línea en la CLI
+
+# ==================================
+# EXPERIMENTO 1: FCFS vs SSTF vs SCAN
+# Secuencia de referencia: 98, 183, 37, 122, 14, 124, 65, 67
+# Posición inicial del cabezal: 53
+# ==================================
+
+# --- Prueba FCFS ---
+set_disk_algo fcfs
+new 50
+dreq 98
+dreq 183
+dreq 37
+dreq 122
+dreq 14
+dreq 124
+dreq 65
+dreq 67
+dview
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+disk_stats
+
+# --- Prueba SSTF ---
+# (Resetear manualmente o reiniciar el simulador)
+set_disk_algo sstf
+new 50
+dreq 98
+dreq 183
+dreq 37
+dreq 122
+dreq 14
+dreq 124
+dreq 65
+dreq 67
+dview
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+disk_stats
+
+# --- Prueba SCAN ---
+set_disk_algo scan
+new 50
+dreq 98
+dreq 183
+dreq 37
+dreq 122
+dreq 14
+dreq 124
+dreq 65
+dreq 67
+dview
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+disk_stats
+
+# ==================================
+# EXPERIMENTO 2: Carga Alta
+# Múltiples procesos solicitando disco
+# ==================================
+
+set_disk_algo sstf
+new 30
+new 40
+new 50
+
+# Proceso 1 solicita
+dreq 50 1
+dreq 120 1
+
+# Proceso 2 solicita
+dreq 80 2
+dreq 150 2
+
+# Proceso 3 solicita
+dreq 20 3
+dreq 190 3
+
+dview
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+disk_stats
+
+# ==================================
+# NOTAS PARA EXPERIMENTACIÓN
+# ==================================
+# Movimiento total esperado (cabezal inicial = 53):
+# FCFS:  |98-53| + |183-98| + |37-183| + |122-37| + |14-122| + |124-14| + |65-124| + |67-65| = 640
+# SSTF:  53→65→67→37→14→98→122→124→183 = 236
+# SCAN:  53→65→67→98→122→124→183→199→37→14 = 299 (aprox, depende dirección inicial)

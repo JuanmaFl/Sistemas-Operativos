@@ -1,56 +1,60 @@
 # kernel-sim/CMakeLists.txt
-
 cmake_minimum_required(VERSION 3.10)
 project(kernel-sim VERSION 0.1.0 LANGUAGES CXX)
 
-# Establecer el est·ndar de C++ a 17
+# Establecer el est√°ndar de C++ a 17
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Directorios de InclusiÛn
-# Permite que el cÛdigo en cualquier mÛdulo se incluya usando rutas relativas (ej. #include <kernel/core.h>)
+# Directorios de Inclusi√≥n
+# Permite que el c√≥digo en cualquier m√≥dulo se incluya usando rutas relativas
 include_directories(
     ${CMAKE_SOURCE_DIR}
 )
 
 # ===================================================================
-# 1. Definir MÛdulos (Bibliotecas Est·ticas)
-# Cada mÛdulo se compila como una librerÌa est·tica (.a)
+# 1. Definir M√≥dulos (Bibliotecas Est√°ticas)
+# Cada m√≥dulo se compila como una librer√≠a est√°tica (.a)
 # ===================================================================
 
-# MÛdulo KERNEL
+# M√≥dulo KERNEL
 add_library(kernel_lib STATIC
     kernel/core.cpp
     kernel/scheduler.cpp
+    kernel/sync.cpp
+    kernel/philosophers.cpp
     kernel/syscall_handler.cpp
 )
 
-# MÛdulo CPU
+# M√≥dulo CPU
 add_library(cpu_lib STATIC
     modules/cpu/processor.cpp
     modules/cpu/context_switch.cpp
 )
 
-# MÛdulo MEM (Memoria Virtual)
+# M√≥dulo MEM (Memoria Virtual)
 add_library(mem_lib STATIC
     modules/mem/memory_manager.cpp
     modules/mem/page_table.cpp
     modules/mem/swap.cpp
 )
 
-# MÛdulo IO
+# M√≥dulo IO
 add_library(io_lib STATIC
     modules/io/io_scheduler.cpp
     modules/io/device_driver.cpp
 )
 
-# MÛdulo DISK
+# M√≥dulo DISK (‚≠êÔ∏è ACTUALIZADO ‚≠êÔ∏è)
 add_library(disk_lib STATIC
+    modules/disk/disk_scheduler.cpp
     modules/disk/filesystem.cpp
     modules/disk/block_manager.cpp
 )
 
-# Agrupar todas las librerÌas en una variable
+
+
+# Agrupar todas las librer√≠as en una variable
 set(SIMULATOR_LIBS
     kernel_lib
     cpu_lib
@@ -70,13 +74,13 @@ add_executable(kernel-sim
     cli/utils.cpp
 )
 
-# Enlazar el ejecutable con todos los mÛdulos de la simulaciÛn
+# Enlazar el ejecutable con todos los m√≥dulos de la simulaci√≥n
 target_link_libraries(kernel-sim PRIVATE
     ${SIMULATOR_LIBS}
 )
 
 # ===================================================================
-# 3. ConfiguraciÛn de Pruebas (Google Test)
+# 3. Configuraci√≥n de Pruebas (Google Test)
 # ===================================================================
 
 # Buscar el paquete GTest (ahora instalado via pacman/MSYS2)
@@ -86,24 +90,25 @@ if (GTest_FOUND)
     # Agregar los directorios donde buscar archivos de prueba
     include_directories(tests)
     
-    # IMPORTANTE: Incluye el mÛdulo GoogleTest para habilitar gtest_discover_tests
+    # IMPORTANTE: Incluye el m√≥dulo GoogleTest para habilitar gtest_discover_tests
     include(GoogleTest)
     
     # Crear un ejecutable para las pruebas unitarias
     add_executable(kernel_tests
         tests/test_integration.cpp
-        # modules/cpu/tests/test_cpu.cpp  <-- AÒadir los tests unitarios aquÌ cuando existan
+        # modules/cpu/tests/test_cpu.cpp  <-- A√±adir los tests unitarios aqu√≠ cuando existan
     )
     
-    # Enlazar los tests con los mÛdulos de la simulaciÛn y GTest
+    # Enlazar los tests con los m√≥dulos de la simulaci√≥n y GTest
     target_link_libraries(kernel_tests PRIVATE 
         ${SIMULATOR_LIBS} 
         GTest::gtest_main
     )
-
-    # Habilitar la detecciÛn autom·tica de tests por CTest
+    
+    # Habilitar la detecci√≥n autom√°tica de tests por CTest
     include(CTest)
     gtest_discover_tests(kernel_tests)
 else()
-    message(WARNING "Google Test no encontrado. No se compilar·n las pruebas.")
+    message(WARNING "Google Test no encontrado. No se compilar√°n las pruebas.")
 endif()
+
