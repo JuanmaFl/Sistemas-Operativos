@@ -12,16 +12,16 @@
 
 KernelSimulator::KernelSimulator()
     : current_time(0) {
-    // Inicializar el Scheduler con un quantum de 3 ticks y Round Robin
     scheduler = std::make_unique<Scheduler>(3, SchedulerAlgorithm::ROUND_ROBIN);
-    // ⭐️ Inicialización Correcta del Gestor de Memoria
     memory_manager = std::make_unique<MemoryManager>();
+    disk_scheduler = std::make_unique<DiskScheduler>(50, DiskAlgorithm::FCFS);
+    io_manager = std::make_unique<IOManager>();
     std::cout << "========================================" << std::endl;
     std::cout << " Simulador de Nucleo (Kernel-Sim) v0.1" << std::endl;
     std::cout << "========================================" << std::endl;
-    std::cout << "[SCHEDULER] Inicializado con algoritmo RR (Quantum: 3)." << std::endl; // Información de inicio agregada
-    disk_scheduler = std::make_unique<DiskScheduler>(50, DiskAlgorithm::FCFS);
+    std::cout << "[SCHEDULER] Inicializado con algoritmo RR (Quantum: 3)." << std::endl;
     std::cout << "[DISK] Planificador de disco inicializado." << std::endl;
+    std::cout << "[IO] Sistema de E/S inicializado." << std::endl;
     std::cout << "Kernel Simulator inicializado." << std::endl;
 }
 
@@ -415,4 +415,29 @@ void KernelSimulator::print_philosophers_status() const {
     else {
         std::cout << "[INFO] Simulación de filósofos no inicializada." << std::endl;
     }
+}
+
+void KernelSimulator::io_request(int priority, int service_time, const std::string& data) {
+    int pid = get_running_process_id();
+    if (pid == -1) {
+        std::cout << "[IO ERROR] No hay proceso en ejecución." << std::endl;
+        return;
+    }
+    io_manager->add_io_request(pid, DeviceType::PRINTER, priority, service_time, data, current_time);
+}
+
+void KernelSimulator::io_request(int pid, int priority, int service_time, const std::string& data) {
+    io_manager->add_io_request(pid, DeviceType::PRINTER, priority, service_time, data, current_time);
+}
+
+void KernelSimulator::process_io() {
+    io_manager->process_io_request(current_time);
+}
+
+void KernelSimulator::print_io_status() const {
+    io_manager->print_io_status();
+}
+
+void KernelSimulator::print_io_stats() const {
+    io_manager->print_io_stats();
 }

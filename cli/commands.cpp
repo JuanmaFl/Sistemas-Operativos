@@ -113,8 +113,12 @@ void handle_command(const std::string& line) {
 				kernel.set_replacement_algorithm(ReplacementAlgorithm::LRU);
 				std::cout << "[INFO] Algoritmo de reemplazo de páginas cambiado a: LRU (Least Recently Used)." << std::endl;
 			}
+			else if (algo == "pff") {
+				kernel.set_replacement_algorithm(ReplacementAlgorithm::PFF);
+				std::cout << "[INFO] Algoritmo de reemplazo de páginas cambiado a: PFF (Page Fault Frequency)." << std::endl;
+			}
 			else {
-				std::cout << "[ERROR] Algoritmo no reconocido. Opciones: fifo, lru." << std::endl;
+				std::cout << "[ERROR] Algoritmo no reconocido. Opciones: fifo, lru, pff." << std::endl;
 			}
 		}
 		else {
@@ -217,6 +221,31 @@ void handle_command(const std::string& line) {
 			std::cout << "[ERROR] 'set_disk_algo' requiere especificar el algoritmo (ej. set_disk_algo sstf)." << std::endl;
 		}
 	}
+	else if (command == "ioreq") {
+		if (command_parts.size() < 3) {
+			std::cout << "[ERROR] Uso: ioreq <prioridad> <tiempo> [datos]" << std::endl;
+			return;
+		}
+
+		int priority, service_time;
+		if (!(std::stringstream(command_parts[1]) >> priority && priority >= 0) ||
+			!(std::stringstream(command_parts[2]) >> service_time && service_time > 0)) {
+			std::cout << "[ERROR] Prioridad y tiempo deben ser números válidos." << std::endl;
+			return;
+		}
+
+		std::string data = (command_parts.size() > 3) ? command_parts[3] : "default";
+		kernel.io_request(priority, service_time, data);
+	}
+	else if (command == "ioproc") {
+		kernel.process_io();
+	}
+	else if (command == "iostat") {
+		kernel.print_io_status();
+	}
+	else if (command == "io_stats") {
+		kernel.print_io_stats();
+	}
 	else if (command == "produce") {
 		std::string item_name = (command_parts.size() > 1) ? command_parts[1] : "";
 		kernel.produce_resource(item_name);
@@ -293,7 +322,7 @@ void handle_command(const std::string& line) {
 		std::cout << "set_quantum <n>: Establece el Quantum para Round Robin." << std::endl;
 
 		std::cout << "\n[MEMORIA]" << std::endl;
-		std::cout << "set_page_algo <fifo|lru>: Selecciona algoritmo de reemplazo de páginas." << std::endl;
+		std::cout << "set_page_algo <fifo|lru|pff>: Algoritmo de reemplazo de páginas." << std::endl;
 		std::cout << "access <dir> [pid]: Simula acceso a memoria virtual." << std::endl;
 		std::cout << "memview: Muestra estado de la memoria física." << std::endl;
 
@@ -304,6 +333,12 @@ void handle_command(const std::string& line) {
 		std::cout << "disk_stats: Muestra estadísticas de disco." << std::endl;
 		std::cout << "dview: Visualiza posición del cabezal y solicitudes." << std::endl;
 		std::cout << "set_disk_algo <fcfs|sstf|scan>: Cambia algoritmo de disco." << std::endl;
+
+		std::cout << "\n[E/S]" << std::endl;
+		std::cout << "ioreq <prioridad> <tiempo> [datos]: Solicitud de E/S." << std::endl;
+		std::cout << "ioproc: Procesa operación de E/S." << std::endl;
+		std::cout << "iostat: Estado del sistema de E/S." << std::endl;
+		std::cout << "io_stats: Estadísticas de E/S." << std::endl;
 
 		std::cout << "\n[SINCRONIZACIÓN]" << std::endl;
 		std::cout << "produce [item]: El proceso RUNNING produce un recurso." << std::endl;
@@ -321,7 +356,8 @@ void handle_command(const std::string& line) {
 		std::cout << "stats: Muestra todas las métricas de rendimiento." << std::endl;
 		std::cout << "exit: Sale del simulador." << std::endl;
 		std::cout << "----------------------------\n" << std::endl;
-	}
+		}
+
 	else {
 		std::cout << "[ERROR] Comando desconocido. Use 'help'." << std::endl;
 	}

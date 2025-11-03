@@ -8,6 +8,7 @@
 
 #include "../modules/mem/memory_manager.h"
 #include "../modules/disk/disk_scheduler.h"
+#include "../modules/io/io_manager.h"
 #include "process.h"
 #include "scheduler.h"
 #include "sync.h"
@@ -21,6 +22,7 @@ private:
 	std::unique_ptr<MemoryManager> memory_manager;
 	std::unique_ptr<DiskScheduler> disk_scheduler;
 	std::unique_ptr<DiningPhilosophers> dining_philosophers;
+	std::unique_ptr<IOManager> io_manager;
 	int current_time;
 	std::vector<std::shared_ptr<Process>> all_processes;
 
@@ -75,6 +77,12 @@ public:
 	void philosopher_think(int id);
 	void philosopher_eat(int id);
 	void print_philosophers_status() const;
+
+	void io_request(int priority, int service_time, const std::string& data);
+	void io_request(int pid, int priority, int service_time, const std::string& data);
+	void process_io();
+	void print_io_status() const;
+	void print_io_stats() const;
 
 	int get_running_process_id() const;
 

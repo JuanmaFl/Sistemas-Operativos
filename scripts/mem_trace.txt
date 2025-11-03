@@ -1,0 +1,46 @@
+```
+
+# scripts/mem_trace.txt
+```
+# Traza de acceso a memoria para análisis FIFO/LRU/PFF
+# Formato: <dirección_virtual>
+# Páginas: 0-31 (32 páginas virtuales)
+
+# Secuencia con localidad temporal
+256
+512
+256
+768
+1024
+256
+512
+1280
+1536
+256
+
+# Secuencia con localidad espacial  
+2048
+2304
+2560
+2816
+3072
+
+# Patrón de thrashing (PFF debe detectar)
+4096
+4352
+4608
+4864
+5120
+4096
+4352
+4608
+4864
+5120
+
+# Working set estable
+6144
+6400
+6656
+6144
+6400
+6656

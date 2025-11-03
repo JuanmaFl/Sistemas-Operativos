@@ -34,6 +34,7 @@ add_library(cpu_lib STATIC
 
 # Módulo MEM (Memoria Virtual)
 add_library(mem_lib STATIC
+    modules/mem/heap_allocator.cpp
     modules/mem/memory_manager.cpp
     modules/mem/page_table.cpp
     modules/mem/swap.cpp
@@ -41,7 +42,7 @@ add_library(mem_lib STATIC
 
 # Módulo IO
 add_library(io_lib STATIC
-    modules/io/io_scheduler.cpp
+    modules/io/io_manager.cpp
     modules/io/device_driver.cpp
 )
 
