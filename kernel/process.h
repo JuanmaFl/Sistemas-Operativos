@@ -1,4 +1,3 @@
-// kernel/process.h
 #ifndef KERNEL_PROCESS_H
 #define KERNEL_PROCESS_H
 
@@ -7,7 +6,6 @@
 #include <string>
 #include "../modules/mem/page_table.h"
 
-// Enum para el estado del proceso
 enum class ProcessState {
     NEW,
     READY,
@@ -16,25 +14,28 @@ enum class ProcessState {
     TERMINATED
 };
 
-// Clase PCB (Process Control Block)
+enum class PrivilegeLevel {
+    KERNEL = 0,
+    USER = 3
+};
+
 class Process {
 public:
     int id;
     ProcessState state;
     int arrival_time;
-    int total_burst_time;  // Tiempo total de ráfaga (CPU)
-    int remaining_time;    // Tiempo de ráfaga restante (para el planificador)
-    int wait_time;         // Tiempo total en cola READY
-    int turnaround_time;   // Tiempo de retorno (finalización - llegada)
-    int time_on_cpu;       // Tiempo que lleva corriendo en este quantum (para RR)
+    int total_burst_time;
+    int remaining_time;
+    int wait_time;
+    int turnaround_time;
+    int time_on_cpu;
     PageTable page_table;
 
-    // std::vector<int> io_requests; // Se puede añadir más tarde para simular E/S
+    PrivilegeLevel privilege_level;
+    int syscall_count;
+    int protection_violations;
 
-    /**
-     * @brief Constructor del Bloque de Control de Proceso (PCB).
-     */
-    Process(int pid, int burst, int arrival = 0)
+    Process(int pid, int burst, int arrival = 0, PrivilegeLevel level = PrivilegeLevel::USER)
         : id(pid),
         state(ProcessState::NEW),
         arrival_time(arrival),
@@ -42,26 +43,35 @@ public:
         remaining_time(burst),
         wait_time(0),
         turnaround_time(0),
-        time_on_cpu(0) // Inicializa el contador de quantum
+        time_on_cpu(0),
+        privilege_level(level),
+        syscall_count(0),
+        protection_violations(0)
     {
     }
 
-    /**
-     * @brief Simula un ciclo de CPU. Decrementa el tiempo restante y cuenta el tiempo en CPU.
-     */
     void run_tick() {
         if (remaining_time > 0) {
             remaining_time--;
-            time_on_cpu++; // Incrementa el tiempo en el quantum actual
+            time_on_cpu++;
         }
     }
 
-    /**
-     * @brief Resetea el contador de tiempo en CPU (al ser expropiado o despachado).
-     */
     void reset_quantum_counter() {
         time_on_cpu = 0;
     }
+
+    bool is_kernel_mode() const {
+        return privilege_level == PrivilegeLevel::KERNEL;
+    }
+
+    void elevate_privilege() {
+        privilege_level = PrivilegeLevel::KERNEL;
+    }
+
+    void lower_privilege() {
+        privilege_level = PrivilegeLevel::USER;
+    }
 };
 
-#endif // KERNEL_PROCESS_H
+#endif

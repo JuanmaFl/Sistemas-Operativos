@@ -14,6 +14,8 @@
 #include "sync.h"
 #include "philosophers.h"
 #include "deadlock_detector.h"
+#include "protection.h"
+#include "syscall_handler.h"
 
 const int PC_BUFFER_SIZE = 5;
 
@@ -25,6 +27,9 @@ private:
 	std::unique_ptr<DiningPhilosophers> dining_philosophers;
 	std::unique_ptr<IOManager> io_manager;
 	std::unique_ptr<DeadlockDetector> deadlock_detector;
+	std::unique_ptr<ProtectionManager> protection_manager;
+	std::unique_ptr<SyscallHandler> syscall_handler;
+
 	int current_time;
 	std::vector<std::shared_ptr<Process>> all_processes;
 
@@ -92,6 +97,12 @@ public:
 	void deadlock_detect();
 	void print_deadlock_state() const;
 	void print_deadlock_stats() const;
+
+	void check_memory_protection(int pid, int address, const std::string& access_type);
+	void invoke_syscall(int pid, const std::string& syscall_type, const std::string& args);
+	void print_segments() const;
+	void print_protection_stats() const;
+	void print_syscall_stats() const;
 
 	int get_running_process_id() const;
 

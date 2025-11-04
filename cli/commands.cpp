@@ -306,6 +306,49 @@ void handle_command(const std::string& line) {
 	else if (command == "dlstats") {
 		kernel.print_deadlock_stats();
 	}
+	else if (command == "protect") {
+		if (command_parts.size() != 4) {
+			std::cout << "[ERROR] Uso: protect <pid> <addr> <read|write|exec>" << std::endl;
+			return;
+		}
+
+		int pid, addr;
+		if (std::stringstream(command_parts[1]) >> pid &&
+			std::stringstream(command_parts[2]) >> std::hex >> addr) {
+			std::string access_type = command_parts[3];
+			std::transform(access_type.begin(), access_type.end(), access_type.begin(), ::tolower);
+			kernel.check_memory_protection(pid, addr, access_type);
+		}
+		else {
+			std::cout << "[ERROR] Parámetros inválidos." << std::endl;
+		}
+	}
+	else if (command == "syscall") {
+		if (command_parts.size() < 3) {
+			std::cout << "[ERROR] Uso: syscall <pid> <read|write|alloc|fork|exit> [args]" << std::endl;
+			return;
+		}
+
+		int pid;
+		if (std::stringstream(command_parts[1]) >> pid) {
+			std::string syscall_type = command_parts[2];
+			std::transform(syscall_type.begin(), syscall_type.end(), syscall_type.begin(), ::tolower);
+			std::string args = (command_parts.size() > 3) ? command_parts[3] : "";
+			kernel.invoke_syscall(pid, syscall_type, args);
+		}
+		else {
+			std::cout << "[ERROR] PID inválido." << std::endl;
+		}
+	}
+	else if (command == "segments") {
+		kernel.print_segments();
+	}
+	else if (command == "protstats") {
+		kernel.print_protection_stats();
+	}
+	else if (command == "syscallstats") {
+		kernel.print_syscall_stats();
+	}
 	else if (command == "produce") {
 		std::string item_name = (command_parts.size() > 1) ? command_parts[1] : "";
 		kernel.produce_resource(item_name);
@@ -407,6 +450,13 @@ void handle_command(const std::string& line) {
 		std::cout << "dldetect: Detecta deadlock." << std::endl;
 		std::cout << "dlstat: Estado de recursos (Banker)." << std::endl;
 		std::cout << "dlstats: Estadísticas de deadlock." << std::endl;
+
+		std::cout << "\n[PROTECCIÓN]" << std::endl;
+		std::cout << "protect <pid> <addr> <read|write|exec>: Verifica protección de memoria." << std::endl;
+		std::cout << "syscall <pid> <read|write|alloc|fork|exit> [args]: Invoca syscall." << std::endl;
+		std::cout << "segments: Muestra tabla de segmentos." << std::endl;
+		std::cout << "protstats: Estadísticas de protección." << std::endl;
+		std::cout << "syscallstats: Estadísticas de syscalls." << std::endl;
 
 		std::cout << "\n[SINCRONIZACIÓN]" << std::endl;
 		std::cout << "produce [item]: El proceso RUNNING produce un recurso." << std::endl;

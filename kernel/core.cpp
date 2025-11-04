@@ -17,6 +17,8 @@ KernelSimulator::KernelSimulator()
     disk_scheduler = std::make_unique<DiskScheduler>(50, DiskAlgorithm::FCFS);
     io_manager = std::make_unique<IOManager>();
     deadlock_detector = std::make_unique<DeadlockDetector>();
+    protection_manager = std::make_unique<ProtectionManager>();
+    syscall_handler = std::make_unique<SyscallHandler>(protection_manager.get());
     std::cout << "========================================" << std::endl;
     std::cout << " Simulador de Nucleo (Kernel-Sim) v0.1" << std::endl;
     std::cout << "========================================" << std::endl;
@@ -466,4 +468,60 @@ void KernelSimulator::print_deadlock_state() const {
 
 void KernelSimulator::print_deadlock_stats() const {
     deadlock_detector->print_deadlock_stats();
+}
+
+
+void KernelSimulator::check_memory_protection(int pid, int address, const std::string& access_type) {
+    std::shared_ptr<Process> proc = get_process_by_id(pid);
+    if (!proc) {
+        std::cout << "[ERROR] Proceso " << pid << " no encontrado." << std::endl;
+        return;
+    }
+
+    AccessType type;
+    if (access_type == "read") type = AccessType::READ;
+    else if (access_type == "write") type = AccessType::WRITE;
+    else if (access_type == "exec") type = AccessType::EXECUTE;
+    else {
+        std::cout << "[ERROR] Tipo de acceso inválido. Use: read, write, exec." << std::endl;
+        return;
+    }
+
+    bool allowed = protection_manager->check_memory_access(proc.get(), address, type);
+    if (!allowed) {
+        proc->protection_violations++;
+    }
+}
+
+void KernelSimulator::invoke_syscall(int pid, const std::string& syscall_type, const std::string& args) {
+    std::shared_ptr<Process> proc = get_process_by_id(pid);
+    if (!proc) {
+        std::cout << "[ERROR] Proceso " << pid << " no encontrado." << std::endl;
+        return;
+    }
+
+    SyscallType type;
+    if (syscall_type == "read") type = SyscallType::READ_FILE;
+    else if (syscall_type == "write") type = SyscallType::WRITE_FILE;
+    else if (syscall_type == "alloc") type = SyscallType::ALLOCATE_MEMORY;
+    else if (syscall_type == "fork") type = SyscallType::CREATE_PROCESS;
+    else if (syscall_type == "exit") type = SyscallType::EXIT_PROCESS;
+    else {
+        std::cout << "[ERROR] Syscall inválida. Use: read, write, alloc, fork, exit." << std::endl;
+        return;
+    }
+
+    syscall_handler->handle_syscall(proc.get(), type, args);
+}
+
+void KernelSimulator::print_segments() const {
+    protection_manager->print_segment_table();
+}
+
+void KernelSimulator::print_protection_stats() const {
+    protection_manager->print_protection_stats();
+}
+
+void KernelSimulator::print_syscall_stats() const {
+    syscall_handler->print_syscall_stats();
 }

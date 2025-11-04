@@ -24,6 +24,7 @@ add_library(kernel_lib STATIC
     kernel/scheduler.cpp
     kernel/sync.cpp
     kernel/philosophers.cpp
+    kernel/protection.cpp
     kernel/syscall_handler.cpp
 )
 
