@@ -133,9 +133,10 @@ mingw32-make
 # Modo interactivo
 ./kernel-sim.exe
 
-# Ejecutar script de demostración completa
-./kernel-sim.exe ../scripts/demo_complete.txt
+#Ejecutar para correr todas las funciones dentro del simulador
+sim> exec ../scripts/demo_complete.txt
 ```
+
 
 ---
 
@@ -450,5 +451,6 @@ Este proyecto es de carácter académico y fue desarrollado como proyecto final 
 
 
 ---
+
 
 **Kernel-Sim v1.0** - Proyecto Final Sistemas Operativos - Universidad EAFIT - 2025
