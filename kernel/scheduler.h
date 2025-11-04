@@ -31,7 +31,7 @@ public:
 
 	std::shared_ptr<Process> get_running_process() const { return running_process; }
 
-	// ⭐️ CORRECCIÓN CLAVE 1: Declaración de la función usada por el Kernel ⭐️
+	//  CORRECCIÓN CLAVE 1: Declaración de la función usada por el Kernel ⭐️
 	int get_running_process_id() const;
 
 	// Función central: decide qué proceso pasa a RUNNING o regresa a READY

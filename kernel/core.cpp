@@ -16,6 +16,7 @@ KernelSimulator::KernelSimulator()
     memory_manager = std::make_unique<MemoryManager>();
     disk_scheduler = std::make_unique<DiskScheduler>(50, DiskAlgorithm::FCFS);
     io_manager = std::make_unique<IOManager>();
+    deadlock_detector = std::make_unique<DeadlockDetector>();
     std::cout << "========================================" << std::endl;
     std::cout << " Simulador de Nucleo (Kernel-Sim) v0.1" << std::endl;
     std::cout << "========================================" << std::endl;
@@ -440,4 +441,29 @@ void KernelSimulator::print_io_status() const {
 
 void KernelSimulator::print_io_stats() const {
     io_manager->print_io_stats();
+}
+
+
+void KernelSimulator::deadlock_init_process(int pid, const std::vector<int>& max) {
+    deadlock_detector->initialize_process(pid, max);
+}
+
+void KernelSimulator::deadlock_request(int pid, const std::vector<int>& request) {
+    deadlock_detector->request_resources(pid, request);
+}
+
+void KernelSimulator::deadlock_release(int pid, const std::vector<int>& release) {
+    deadlock_detector->release_resources(pid, release);
+}
+
+void KernelSimulator::deadlock_detect() {
+    deadlock_detector->detect_deadlock();
+}
+
+void KernelSimulator::print_deadlock_state() const {
+    deadlock_detector->print_resource_state();
+}
+
+void KernelSimulator::print_deadlock_stats() const {
+    deadlock_detector->print_deadlock_stats();
 }

@@ -246,6 +246,66 @@ void handle_command(const std::string& line) {
 	else if (command == "io_stats") {
 		kernel.print_io_stats();
 	}
+	else if (command == "dlinit") {
+		if (command_parts.size() != 5) {
+			std::cout << "[ERROR] Uso: dlinit <pid> <r1> <r2> <r3>" << std::endl;
+			return;
+		}
+
+		int pid, r1, r2, r3;
+		if (std::stringstream(command_parts[1]) >> pid &&
+			std::stringstream(command_parts[2]) >> r1 &&
+			std::stringstream(command_parts[3]) >> r2 &&
+			std::stringstream(command_parts[4]) >> r3) {
+			kernel.deadlock_init_process(pid, { r1, r2, r3 });
+		}
+		else {
+			std::cout << "[ERROR] Parámetros inválidos." << std::endl;
+		}
+	}
+	else if (command == "dlreq") {
+		if (command_parts.size() != 5) {
+			std::cout << "[ERROR] Uso: dlreq <pid> <r1> <r2> <r3>" << std::endl;
+			return;
+		}
+
+		int pid, r1, r2, r3;
+		if (std::stringstream(command_parts[1]) >> pid &&
+			std::stringstream(command_parts[2]) >> r1 &&
+			std::stringstream(command_parts[3]) >> r2 &&
+			std::stringstream(command_parts[4]) >> r3) {
+			kernel.deadlock_request(pid, { r1, r2, r3 });
+		}
+		else {
+			std::cout << "[ERROR] Parámetros inválidos." << std::endl;
+		}
+	}
+	else if (command == "dlrel") {
+		if (command_parts.size() != 5) {
+			std::cout << "[ERROR] Uso: dlrel <pid> <r1> <r2> <r3>" << std::endl;
+			return;
+		}
+
+		int pid, r1, r2, r3;
+		if (std::stringstream(command_parts[1]) >> pid &&
+			std::stringstream(command_parts[2]) >> r1 &&
+			std::stringstream(command_parts[3]) >> r2 &&
+			std::stringstream(command_parts[4]) >> r3) {
+			kernel.deadlock_release(pid, { r1, r2, r3 });
+		}
+		else {
+			std::cout << "[ERROR] Parámetros inválidos." << std::endl;
+		}
+	}
+	else if (command == "dldetect") {
+		kernel.deadlock_detect();
+	}
+	else if (command == "dlstat") {
+		kernel.print_deadlock_state();
+	}
+	else if (command == "dlstats") {
+		kernel.print_deadlock_stats();
+	}
 	else if (command == "produce") {
 		std::string item_name = (command_parts.size() > 1) ? command_parts[1] : "";
 		kernel.produce_resource(item_name);
@@ -340,6 +400,14 @@ void handle_command(const std::string& line) {
 		std::cout << "iostat: Estado del sistema de E/S." << std::endl;
 		std::cout << "io_stats: Estadísticas de E/S." << std::endl;
 
+		std::cout << "\n[DEADLOCK]" << std::endl;
+		std::cout << "dlinit <pid> <r1> <r2> <r3>: Inicializa recursos máximos." << std::endl;
+		std::cout << "dlreq <pid> <r1> <r2> <r3>: Solicita recursos." << std::endl;
+		std::cout << "dlrel <pid> <r1> <r2> <r3>: Libera recursos." << std::endl;
+		std::cout << "dldetect: Detecta deadlock." << std::endl;
+		std::cout << "dlstat: Estado de recursos (Banker)." << std::endl;
+		std::cout << "dlstats: Estadísticas de deadlock." << std::endl;
+
 		std::cout << "\n[SINCRONIZACIÓN]" << std::endl;
 		std::cout << "produce [item]: El proceso RUNNING produce un recurso." << std::endl;
 		std::cout << "consume: El proceso RUNNING consume un recurso." << std::endl;
@@ -356,8 +424,7 @@ void handle_command(const std::string& line) {
 		std::cout << "stats: Muestra todas las métricas de rendimiento." << std::endl;
 		std::cout << "exit: Sale del simulador." << std::endl;
 		std::cout << "----------------------------\n" << std::endl;
-		}
-
+	}
 	else {
 		std::cout << "[ERROR] Comando desconocido. Use 'help'." << std::endl;
 	}

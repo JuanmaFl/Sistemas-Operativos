@@ -13,6 +13,7 @@
 #include "scheduler.h"
 #include "sync.h"
 #include "philosophers.h"
+#include "deadlock_detector.h"
 
 const int PC_BUFFER_SIZE = 5;
 
@@ -23,6 +24,7 @@ private:
 	std::unique_ptr<DiskScheduler> disk_scheduler;
 	std::unique_ptr<DiningPhilosophers> dining_philosophers;
 	std::unique_ptr<IOManager> io_manager;
+	std::unique_ptr<DeadlockDetector> deadlock_detector;
 	int current_time;
 	std::vector<std::shared_ptr<Process>> all_processes;
 
@@ -83,6 +85,13 @@ public:
 	void process_io();
 	void print_io_status() const;
 	void print_io_stats() const;
+
+	void deadlock_init_process(int pid, const std::vector<int>& max);
+	void deadlock_request(int pid, const std::vector<int>& request);
+	void deadlock_release(int pid, const std::vector<int>& release);
+	void deadlock_detect();
+	void print_deadlock_state() const;
+	void print_deadlock_stats() const;
 
 	int get_running_process_id() const;
 

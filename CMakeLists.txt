@@ -20,6 +20,7 @@ include_directories(
 # Módulo KERNEL
 add_library(kernel_lib STATIC
     kernel/core.cpp
+    kernel/deadlock_detector.cpp
     kernel/scheduler.cpp
     kernel/sync.cpp
     kernel/philosophers.cpp
