@@ -1,0 +1,36 @@
+%%{init: {'theme':'base'}}%%
+graph TD
+    subgraph Stats["ESTADÍSTICAS FINALES DEL DEMO"]
+        direction TB
+        
+        subgraph CPU["CPU y Procesos"]
+            CPU1["Tiempo Kernel: 23<br/>Procesos Creados: 6<br/>Terminados: 2"]
+            CPU2["Wait Time Prom: 8.00<br/>Turnaround Prom: 14.50"]
+        end
+        
+        subgraph MEM["Memoria Virtual"]
+            MEM1["Algoritmo: PFF<br/>Accesos: 19<br/>Fallos: 14"]
+            MEM2["Hit Rate: 26.32%"]
+        end
+        
+        subgraph DSK["Disco"]
+            DSK1["Solicitudes: 13<br/>Movimiento Total: 798"]
+            DSK2["Promedio: 61.38 cyl/req"]
+        end
+        
+        subgraph SYNC["Sincronización"]
+            SYNC1["Buffer P/C: 1/5<br/>Filósofos: 5 comidas"]
+            SYNC2["Deadlock: 0"]
+        end
+        
+        subgraph PROT["Protección"]
+            PROT1["Verificaciones: 3<br/>Violaciones: 2"]
+            PROT2["Syscalls: 4<br/>Éxito: 100%"]
+        end
+    end
+    
+    style CPU fill:#e3f2fd
+    style MEM fill:#fff9c4
+    style DSK fill:#ffccbc
+    style SYNC fill:#c8e6c9
+    style PROT fill:#f8bbd0

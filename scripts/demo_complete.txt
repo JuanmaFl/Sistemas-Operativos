@@ -1,0 +1,241 @@
+# ==========================================
+# DEMO COMPLETA DEL KERNEL-SIM v0.1
+# Demuestra TODAS las funcionalidades
+# ==========================================
+
+# ------------------------------------------
+# 1. GESTIÓN DE PROCESOS Y PLANIFICACIÓN
+# ------------------------------------------
+new 10
+new 5
+new 8
+ps
+
+set_algo rr
+set_quantum 2
+run 5
+ps
+
+set_algo sjf
+run 10
+ps
+stats
+
+# ------------------------------------------
+# 2. MEMORIA VIRTUAL - FIFO
+# ------------------------------------------
+set_page_algo fifo
+new 20
+run 1
+
+access 256 1
+access 512 1
+access 768 1
+access 1024 1
+access 256 1
+access 1280 1
+
+memview
+stats
+
+# ------------------------------------------
+# 3. MEMORIA VIRTUAL - LRU
+# ------------------------------------------
+set_page_algo lru
+
+access 2048 1
+access 2304 1
+access 2560 1
+access 2048 1
+access 2816 1
+
+memview
+stats
+
+# ------------------------------------------
+# 4. MEMORIA VIRTUAL - PFF
+# ------------------------------------------
+set_page_algo pff
+
+access 3072 1
+access 3328 1
+access 3584 1
+access 3840 1
+access 4096 1
+
+run 5
+
+access 3072 1
+access 3328 1
+access 3584 1
+
+memview
+stats
+
+# ------------------------------------------
+# 5. PLANIFICACIÓN DE DISCO - FCFS
+# ------------------------------------------
+set_disk_algo fcfs
+
+dreq 98 2
+dreq 183 3
+dreq 37 2
+dreq 122 3
+dreq 14 2
+
+dview
+dstat
+
+dproc
+dproc
+dproc
+dproc
+dproc
+
+dview
+disk_stats
+
+# ------------------------------------------
+# 6. PLANIFICACIÓN DE DISCO - SSTF
+# ------------------------------------------
+set_disk_algo sstf
+
+dreq 65 2
+dreq 67 3
+dreq 124 2
+dreq 140 3
+
+dview
+
+dproc
+dproc
+dproc
+dproc
+
+dview
+disk_stats
+
+# ------------------------------------------
+# 7. PLANIFICACIÓN DE DISCO - SCAN
+# ------------------------------------------
+set_disk_algo scan
+
+dreq 50 2
+dreq 180 3
+dreq 20 2
+dreq 90 3
+
+dproc
+dproc
+dproc
+dproc
+
+disk_stats
+
+# ------------------------------------------
+# 8. ENTRADA/SALIDA
+# ------------------------------------------
+new 30
+run 1
+
+ioreq 5 3 Documento1
+ioreq 8 2 Documento2
+ioreq 3 4 Documento3
+
+iostat
+
+ioproc
+ioproc
+ioproc
+ioproc
+ioproc
+
+iostat
+io_stats
+
+# ------------------------------------------
+# 9. SINCRONIZACIÓN - PRODUCTOR/CONSUMIDOR
+# ------------------------------------------
+new 40
+run 1
+
+produce ItemA
+produce ItemB
+produce ItemC
+
+sync_stat
+
+consume
+consume
+
+sync_stat
+
+# ------------------------------------------
+# 10. CENA DE LOS FILÓSOFOS
+# ------------------------------------------
+phil start
+phil status
+
+phil eat 0
+phil eat 1
+phil eat 2
+phil eat 3
+
+phil status
+
+phil think 0
+phil eat 4
+
+phil status
+phil stop
+
+# ------------------------------------------
+# 11. DETECCIÓN DE DEADLOCK (BANKER)
+# ------------------------------------------
+dlinit 0 3 2 1
+dlinit 1 2 1 1
+dlinit 2 2 2 1
+
+dlstat
+dldetect
+
+dlreq 0 1 0 0
+dlstat
+dldetect
+
+dlreq 1 1 0 0
+dlstat
+dldetect
+
+dlreq 0 1 1 0
+dlstat
+
+dlstats
+
+# ------------------------------------------
+# 12. PROTECCIÓN Y SEGURIDAD
+# ------------------------------------------
+segments
+
+protect 1 0x500 read
+protect 1 0x500 write
+protect 1 0x3500 read
+
+syscall 1 read archivo.txt
+syscall 1 write salida.txt
+syscall 1 alloc 2048
+syscall 1 fork
+
+protstats
+syscallstats
+
+# ------------------------------------------
+# 13. ESTADÍSTICAS FINALES
+# ------------------------------------------
+ps
+stats
+
+# ------------------------------------------
+# FIN DE LA DEMOSTRACIÓN
+# ------------------------------------------
+exit

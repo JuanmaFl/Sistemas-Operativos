@@ -1,0 +1,25 @@
+# Experimento: Cena de los Filósofos
+# Objetivo: Verificar prevención de deadlock
+
+phil start
+phil status
+
+phil eat 0
+phil eat 1
+phil eat 2
+phil eat 3
+phil eat 4
+
+phil status
+
+phil think 0
+phil eat 4
+phil status
+
+phil eat 0
+phil eat 1
+phil eat 2
+
+phil status
+phil stop
+exit

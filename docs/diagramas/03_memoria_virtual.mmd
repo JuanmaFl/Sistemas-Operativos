@@ -1,0 +1,31 @@
+flowchart TD
+    Start([Virtual Address<br/>e.g., 256 PID 1]) --> PageTable[Page Table Lookup<br/>Página = 1]
+    
+    PageTable --> Present{Page<br/>Present?}
+    
+    Present -->|YES| Hit[✓ HIT<br/>Frame 0<br/>Access Data]
+    Present -->|NO| Fault[✗ PAGE FAULT]
+    
+    Fault --> FreeFrame{Free<br/>Frame?}
+    
+    FreeFrame -->|YES| Assign[Assign Frame 0<br/>Load Page]
+    FreeFrame -->|NO| Replace[Replacement Algorithm]
+    
+    Replace --> ChooseAlgo{Algorithm}
+    ChooseAlgo -->|FIFO| FIFO[Evict Oldest<br/>Queue Front]
+    ChooseAlgo -->|LRU| LRU[Evict LRU<br/>Min Timestamp]
+    ChooseAlgo -->|PFF| PFF[Adjust Frames<br/>Monitor Fault Rate]
+    
+    FIFO --> Evict[Evict Victim]
+    LRU --> Evict
+    PFF --> Evict
+    
+    Evict --> LoadPage[Load New Page]
+    Assign --> End([Access Complete])
+    LoadPage --> End
+    Hit --> End
+    
+    style Start fill:#e3f2fd
+    style Hit fill:#c8e6c9
+    style Fault fill:#ffccbc
+    style End fill:#f0f4c3

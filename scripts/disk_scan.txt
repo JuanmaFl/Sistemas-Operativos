@@ -1,0 +1,29 @@
+# Experimento: SCAN - Planificación de disco
+# Objetivo: Comparar con FCFS y SSTF
+
+set_disk_algo scan
+
+dreq 98 1
+dreq 183 2
+dreq 37 3
+dreq 122 4
+dreq 14 5
+dreq 124 6
+dreq 65 7
+dreq 67 8
+
+dview
+dstat
+
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+dproc
+
+dview
+disk_stats
+exit

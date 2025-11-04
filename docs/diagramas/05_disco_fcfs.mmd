@@ -1,0 +1,20 @@
+%%{init: {'theme':'base', 'themeVariables': {'fontSize':'14px'}}}%%
+graph LR
+    subgraph FCFS["FCFS - First Come First Served"]
+        direction LR
+        Start[Inicio: 50] --> R1[98<br/>+48]
+        R1 --> R2[183<br/>+85]
+        R2 --> R3[37<br/>+146]
+        R3 --> R4[122<br/>+85]
+        R4 --> R5[14<br/>+108]
+        
+        Total1["<b>Total: 472 cilindros</b><br/>Promedio: 94.4"]
+    end
+    
+    style Start fill:#e3f2fd
+    style R1 fill:#fff9c4
+    style R2 fill:#ffccbc
+    style R3 fill:#f8bbd0
+    style R4 fill:#c8e6c9
+    style R5 fill:#d1c4e9
+    style Total1 fill:#ffebee,stroke:#c62828,stroke-width:3px

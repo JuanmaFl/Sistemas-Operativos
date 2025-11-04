@@ -1,0 +1,20 @@
+%%{init: {'theme':'base', 'themeVariables': {'fontSize':'14px'}}}%%
+graph LR
+    subgraph SCAN["SCAN - Elevator Algorithm"]
+        direction LR
+        Start3[Inicio: 140<br/>Dir: ADELANTE] --> SC1[180<br/>+40]
+        SC1 --> Turn[199 Extremo<br/>CAMBIO → ATRÁS]
+        Turn --> SC2[90<br/>+90]
+        SC2 --> SC3[50<br/>+40]
+        SC3 --> SC4[20<br/>+30]
+        
+        Total3["<b>Total: 200 cilindros</b><br/>Acumulado: 798 / 13 = 61.38 prom."]
+    end
+    
+    style Start3 fill:#e3f2fd
+    style SC1 fill:#fff9c4
+    style Turn fill:#ffccbc,stroke:#d32f2f,stroke-width:2px
+    style SC2 fill:#c8e6c9
+    style SC3 fill:#bbdefb
+    style SC4 fill:#f8bbd0
+    style Total3 fill:#fff3e0,stroke:#ef6c00,stroke-width:3px

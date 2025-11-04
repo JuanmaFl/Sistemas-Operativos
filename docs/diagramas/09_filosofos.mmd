@@ -1,0 +1,38 @@
+graph TD
+    subgraph Table["Mesa de los Filósofos"]
+        P0([Filósofo 0<br/>Comidas: 1])
+        P1([Filósofo 1<br/>Comidas: 1])
+        P2([Filósofo 2<br/>Comidas: 1])
+        P3([Filósofo 3<br/>Comidas: 1])
+        P4([Filósofo 4<br/>Comidas: 1])
+        
+        F0[🍴 Tenedor 0]
+        F1[🍴 Tenedor 1]
+        F2[🍴 Tenedor 2]
+        F3[🍴 Tenedor 3]
+        F4[🍴 Tenedor 4]
+        
+        P0 -.->|Izq| F0
+        P0 -.->|Der| F1
+        P1 -.->|Izq| F1
+        P1 -.->|Der| F2
+        P2 -.->|Izq| F2
+        P2 -.->|Der| F3
+        P3 -.->|Izq| F3
+        P3 -.->|Der| F4
+        P4 -.->|Izq| F4
+        P4 -.->|Der| F0
+    end
+    
+    Room[Semaphore Room<br/>Max: 4 filósofos en mesa]
+    Room -.->|Controla| Table
+    
+    Result["✅ Resultado:<br/>- Sin deadlock<br/>- Todos comieron<br/>- Bloqueos: 0"]
+    
+    style P0 fill:#c8e6c9
+    style P1 fill:#c8e6c9
+    style P2 fill:#c8e6c9
+    style P3 fill:#c8e6c9
+    style P4 fill:#c8e6c9
+    style Room fill:#ffccbc
+    style Result fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px

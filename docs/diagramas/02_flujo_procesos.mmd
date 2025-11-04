@@ -1,0 +1,29 @@
+stateDiagram-v2
+    [*] --> NEW: new <burst>
+    NEW --> READY: Scheduler::add_process()
+    
+    READY --> RUNNING: dispatch()
+    
+    RUNNING --> READY: Preemption<br/>(Quantum agotado)
+    RUNNING --> WAITING: I/O Request<br/>Sync Wait
+    RUNNING --> TERMINATED: burst_time == 0
+    
+    WAITING --> READY: I/O Complete<br/>Resource Ready
+    
+    TERMINATED --> [*]
+    
+    note right of RUNNING
+        Ejemplo Demo:
+        T=0: P1,P2,P3 → READY
+        T=1: P1 → RUNNING
+        T=3: P1 → READY (Q=2)
+        T=5: P2 → READY (Q=2)
+        T=13: P3 → TERMINATED
+    end note
+    
+    note right of READY
+        Cola READY (T=23):
+        - PID 4 (Burst=20)
+        - PID 5 (Burst=30)
+        - PID 6 (Burst=40)
+    end note

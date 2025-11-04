@@ -1,0 +1,39 @@
+sequenceDiagram
+    participant P as Producer (PID 1)
+    participant Empty as Semaphore Empty
+    participant Mutex as Semaphore Mutex
+    participant Buffer as Buffer [5]
+    participant Full as Semaphore Full
+    participant C as Consumer (PID 1)
+    
+    Note over Buffer: Estado Inicial: []<br/>Empty=5, Full=0, Mutex=1
+    
+    P->>Empty: wait(empty)
+    Empty-->>P: OK (empty=4)
+    P->>Mutex: wait(mutex)
+    Mutex-->>P: OK (mutex=0)
+    
+    P->>Buffer: add("ItemA")
+    Note over Buffer: ["ItemA"]
+    
+    P->>Mutex: signal(mutex)
+    Mutex-->>P: OK (mutex=1)
+    P->>Full: signal(full)
+    Full-->>P: OK (full=1)
+    
+    Note over Buffer: Estado: ["ItemA", "ItemB", "ItemC"]<br/>Empty=2, Full=3, Mutex=1
+    
+    C->>Full: wait(full)
+    Full-->>C: OK (full=2)
+    C->>Mutex: wait(mutex)
+    Mutex-->>C: OK (mutex=0)
+    
+    C->>Buffer: remove("ItemA")
+    Note over Buffer: ["ItemB", "ItemC"]
+    
+    C->>Mutex: signal(mutex)
+    Mutex-->>C: OK (mutex=1)
+    C->>Empty: signal(empty)
+    Empty-->>C: OK (empty=3)
+    
+    Note over Buffer: Estado Final: ["ItemC"]<br/>Empty=4, Full=1, Mutex=1

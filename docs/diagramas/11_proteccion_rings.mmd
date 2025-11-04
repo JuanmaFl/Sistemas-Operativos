@@ -1,0 +1,37 @@
+graph TB
+    subgraph Ring0["Ring 0 - KERNEL MODE"]
+        Kernel["Acceso completo<br/>Hardware directo<br/>Instrucciones privilegiadas"]
+    end
+    
+    subgraph Ring3["Ring 3 - USER MODE"]
+        User["Acceso limitado<br/>Syscalls requeridas"]
+    end
+    
+    subgraph Segments["Tabla de Segmentos"]
+        CODE["CODE<br/>Base: 0x0000<br/>Limit: 0x1000<br/>R ✓ W ✗ X ✓<br/>Ring 3"]
+        DATA["DATA<br/>Base: 0x1000<br/>Limit: 0x2000<br/>R ✓ W ✓ X ✗<br/>Ring 3"]
+        STACK["STACK<br/>Base: 0x2000<br/>Limit: 0x3000<br/>R ✓ W ✓ X ✗<br/>Ring 3"]
+        KRNL["KERNEL<br/>Base: 0x3000<br/>Limit: 0x4000<br/>R ✓ W ✓ X ✓<br/>Ring 0"]
+    end
+    
+    User -->|Syscall| Elevate[Elevación de Privilegio]
+    Elevate --> Kernel
+    Kernel -->|Return| Lower[Bajar a Ring 3]
+    Lower --> User
+    
+    subgraph Tests["Pruebas de Protección"]
+        T1["protect 1 0x500 read<br/>✓ Permitido"]
+        T2["protect 1 0x500 write<br/>✗ Violación CODE"]
+        T3["protect 1 0x3500 read<br/>✗ Violación Ring"]
+    end
+    
+    subgraph Syscalls["Syscalls Ejecutadas"]
+        SC["READ: 1<br/>WRITE: 1<br/>ALLOC: 1<br/>FORK: 1"]
+    end
+    
+    style Ring0 fill:#ffccbc
+    style Ring3 fill:#c8e6c9
+    style T1 fill:#c8e6c9
+    style T2 fill:#ffccbc
+    style T3 fill:#ffccbc
+    style Syscalls fill:#bbdefb

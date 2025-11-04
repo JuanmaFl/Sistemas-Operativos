@@ -1,0 +1,22 @@
+%%{init: {'theme':'base'}}%%
+graph TD
+    subgraph Results["Resultados Experimentales - Memoria"]
+        direction TB
+        
+        subgraph Stats["Estadísticas por Algoritmo"]
+            FIFO["<b>FIFO</b><br/>Accesos: 6<br/>Fallos: 5<br/>Hit Rate: 16.67%"]
+            LRU["<b>LRU</b><br/>Accesos: 11<br/>Fallos: 9<br/>Hit Rate: 18.18%"]
+            PFF_s["<b>PFF</b><br/>Accesos: 19<br/>Fallos: 14<br/>Hit Rate: 26.32%"]
+        end
+        
+        subgraph Frames["Estado Final de Marcos"]
+            Frame1["Marcos 0-13: OCUPADOS<br/>PID 1"]
+            Frame2["Marcos 14-15: LIBRES"]
+        end
+    end
+    
+    style FIFO fill:#ffccbc
+    style LRU fill:#fff9c4
+    style PFF_s fill:#c8e6c9
+    style Frame1 fill:#bbdefb
+    style Frame2 fill:#f5f5f5

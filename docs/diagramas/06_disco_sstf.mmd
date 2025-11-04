@@ -1,0 +1,18 @@
+%%{init: {'theme':'base', 'themeVariables': {'fontSize':'14px'}}}%%
+graph LR
+    subgraph SSTF["SSTF - Shortest Seek Time First"]
+        direction LR
+        Start2[Inicio: 14] --> S1[65<br/>+51]
+        S1 --> S2[67<br/>+2]
+        S2 --> S3[124<br/>+57]
+        S3 --> S4[140<br/>+16]
+        
+        Total2["<b>Total: 126 cilindros</b><br/>Acumulado: 598 / 9 = 66.44 prom."]
+    end
+    
+    style Start2 fill:#e3f2fd
+    style S1 fill:#c8e6c9
+    style S2 fill:#c8e6c9
+    style S3 fill:#fff9c4
+    style S4 fill:#ffccbc
+    style Total2 fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px

@@ -1,0 +1,24 @@
+# Experimento: Sistema de Protección
+# Objetivo: Verificar rings y syscalls
+
+new 50
+segments
+
+protect 1 0x500 read
+protect 1 0x500 write
+protect 1 0x500 exec
+
+protect 1 0x1500 read
+protect 1 0x1500 write
+
+protect 1 0x3500 read
+protect 1 0x3500 write
+
+syscall 1 read archivo.txt
+syscall 1 write output.txt
+syscall 1 alloc 2048
+syscall 1 fork
+
+protstats
+syscallstats
+exit

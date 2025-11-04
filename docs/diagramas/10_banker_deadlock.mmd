@@ -1,0 +1,30 @@
+flowchart TD
+    Start([Estado Inicial<br/>Disponibles: 3,3,2]) --> Init["P0: Max[3,2,1] Asig[0,0,0]<br/>P1: Max[2,1,1] Asig[0,0,0]<br/>P2: Max[2,2,1] Asig[0,0,0]"]
+    
+    Init --> Check1{Secuencia<br/>Segura?}
+    Check1 -->|✓ SI| Safe1["P0 → P1 → P2"]
+    
+    Safe1 --> Req1[dlreq 0 1 0 0]
+    Req1 --> State1["P0: Asig[1,0,0]<br/>Disponibles: 2,3,2"]
+    
+    State1 --> Check2{Secuencia<br/>Segura?}
+    Check2 -->|✓ SI| Safe2["P0 → P1 → P2"]
+    
+    Safe2 --> Req2[dlreq 1 1 0 0]
+    Req2 --> State2["P1: Asig[1,0,0]<br/>Disponibles: 1,3,2"]
+    
+    State2 --> Check3{Secuencia<br/>Segura?}
+    Check3 -->|✓ SI| Safe3["P1 → P2 → P0"]
+    
+    Safe3 --> Req3[dlreq 0 1 1 0]
+    Req3 --> Check4{Secuencia<br/>Segura?}
+    Check4 -->|✗ NO| Reject["❌ RECHAZADO<br/>Estado Inseguro"]
+    
+    Reject --> Stats["Estadísticas:<br/>Total: 3<br/>Seguros: 2<br/>Inseguros: 1<br/>Tasa: 66.67%"]
+    
+    style Start fill:#e3f2fd
+    style Safe1 fill:#c8e6c9
+    style Safe2 fill:#c8e6c9
+    style Safe3 fill:#c8e6c9
+    style Reject fill:#ffccbc
+    style Stats fill:#fff3e0,stroke:#ef6c00,stroke-width:2px

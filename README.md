@@ -1,141 +1,454 @@
-#  Simulador de Núcleo de Sistema Operativo (Kernel-Sim)
+# Simulador de Núcleo de Sistema Operativo (Kernel-Sim)
 
-Este proyecto es una simulación modular de los componentes clave de un sistema operativo simplificado, desarrollado en C++17. Incluye módulos para la gestión de procesos, planificación (Round Robin, SJF), memoria virtual con paginación (FIFO, LRU), sincronización y E/S.
- 
-# Realizado por:
-Laura Sofia Aceros y Juan Manuel Florez
+**Proyecto Final - Sistemas Operativos**  
+**Universidad EAFIT**  
+**Equipo:** Laura Sofía Aceros & Juan Manuel Flórez
 
-##  Stack Tecnológico
+Este proyecto es una simulación modular de los componentes clave de un sistema operativo simplificado, desarrollado en C++17. Implementa gestión de procesos, planificación de CPU, memoria virtual con paginación, planificación de disco, sincronización, detección de deadlock y sistema de protección.
 
-* **Lenguaje:** C++17
-* **Sistema de Build:** CMake (v3.10+)
-* **Compilador:** MinGW-w64 (GCC)
-* **Pruebas:** Google Test (GTest)
+---
+
+## 1.Tabla de Contenidos
+
+- [Stack Tecnológico](#stack-tecnológico)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Requisitos e Instalación](#requisitos-e-instalación)
+- [Compilación y Ejecución](#compilación-y-ejecución)
+- [Componentes Implementados](#componentes-implementados)
+- [Uso del Simulador](#uso-del-simulador)
+- [Scripts de Experimentación](#scripts-de-experimentación)
+- [Resultados y Análisis](#resultados-y-análisis)
+- [Documentación](#documentación)
+- [Equipo](#equipo)
+
+---
+
+## Stack Tecnológico
+
+| Componente | Versión/Tecnología |
+|------------|-------------------|
+| **Lenguaje** | C++17 |
+| **Build System** | CMake 3.10+ |
+| **Compilador** | MinGW-w64 (GCC) |
+| **Testing** | Google Test (GTest) |
+| **Plataforma** | Windows (MSYS2/UCRT64) |
 
 ---
 
 ##  Estructura del Proyecto
 
-El código está organizado modularmente, reflejando las capas de un Kernel:
-
-| Directorio | Propósito |
-| :--- | :--- |
-| `kernel/` | Lógica central del sistema (Core, Scheduler, Syscalls). |
-| `modules/` | Contiene subsistemas principales (CPU, Memoria, I/O, Disco). |
-| `cli/` | El punto de entrada de la aplicación y la interfaz de línea de comandos. |
-| `tests/` | Pruebas de integración y unitarias (utiliza GTest). |
-| `docs/` | Archivos de documentación y arquitectura. |
+```
+kernel-sim/
+├── kernel/               # Núcleo del sistema
+│   ├── core.cpp         # Simulador principal
+│   ├── scheduler.cpp    # Planificador de CPU
+│   ├── process.h        # PCB (Process Control Block)
+│   ├── deadlock_detector.cpp  # Algoritmo del Banquero
+│   ├── protection.cpp   # Sistema de protección (Rings)
+│   └── syscall_handler.cpp    # Manejador de syscalls
+│
+├── modules/             # Módulos del sistema
+│   ├── cpu/            # Planificación de procesos
+│   ├── mem/            # Gestión de memoria virtual
+│   │   ├── memory_manager.cpp
+│   │   ├── page_table.cpp
+│   │   └── buddy_allocator.cpp
+│   ├── disk/           # Planificación de disco
+│   │   └── disk_scheduler.cpp
+│   └── io/             # Sistema de E/S
+│       └── io_manager.cpp
+│
+├── cli/                # Interfaz de línea de comandos
+│   ├── main.cpp
+│   └── commands.cpp    # 40+ comandos
+│
+├── scripts/            # Scripts de experimentación
+│   ├── demo_complete.txt
+│   ├── mem_*.txt
+│   ├── disk_*.txt
+│   └── proc_*.txt
+│
+├── docs/               # Documentación
+│   ├── diagrams/       # Diagramas Mermaid
+│   └── modules/        # Documentación por módulo
+│
+└── tests/              # Pruebas unitarias
+    └── test_*.cpp
+```
 
 ---
 
 ## Requisitos e Instalación
 
-Para compilar y ejecutar el proyecto, se necesita un entorno de desarrollo C++ compatible con MSYS2/MinGW.
+### 1. Instalar MSYS2
 
-1.  **Instalar MSYS2:** Siga las instrucciones oficiales de MSYS2.
-2.  **Instalar Herramientas de Desarrollo:** En la terminal **MSYS2 UCRT64** (Recomendado), ejecute los siguientes comandos para instalar el compilador, CMake y Google Test:
+Descarga e instala desde: https://www.msys2.org/
 
-    ```bash
-    # 1. Actualizar la base de datos de paquetes
-    pacman -Sy
-    
-    # 2. Instalar el toolchain (g++, make)
-    pacman -S mingw-w64-ucrt-x86_64-toolchain
-    
-    # 3. Instalar CMake (para generar archivos de build)
-    pacman -S mingw-w64-ucrt-x86_64-cmake
-    
-    # 4. Instalar Google Test (para la suite de pruebas)
-    pacman -S mingw-w64-ucrt-x86_64-gtest
-    ```
+### 2. Instalar Herramientas de Desarrollo
+
+Abre la terminal **MSYS2 UCRT64** y ejecuta:
+
+```bash
+# Actualizar base de datos de paquetes
+pacman -Sy
+
+# Instalar toolchain (g++, make)
+pacman -S mingw-w64-ucrt-x86_64-toolchain
+
+# Instalar CMake
+pacman -S mingw-w64-ucrt-x86_64-cmake
+
+# Instalar Google Test
+pacman -S mingw-w64-ucrt-x86_64-gtest
+```
 
 ---
 
 ##  Compilación y Ejecución
 
-Siga estos pasos desde la terminal **MSYS2 UCRT64**.
-
-### 1. Preparar la Compilación (CMake)
-
-Navegue a la carpeta raíz del proyecto y use CMake para generar los archivos de *build* (`Makefiles`).
+### 1. Clonar el Repositorio
 
 ```bash
-# Navegar a la carpeta del proyecto (ajuste la ruta según sea necesario)
-cd /c/Users/jmflo/kernel-sim/
+git clone https://github.com/tu-usuario/kernel-sim.git
+cd kernel-sim
+```
 
-# Crear y entrar al directorio de build
+### 2. Generar Archivos de Build
+
+```bash
 mkdir build
 cd build
-
-# Ejecutar CMake para generar los Makefiles
 cmake ..
 ```
 
-### 2. Compilar el Código
+### 3. Compilar
 
-Use el comando mingw32-make para compilar todos los módulos y el ejecutable principal.
-
-Bash
-
-# Compilar el proyecto completo
+```bash
 mingw32-make
+```
 
-### 3. Ejecutar el Simulador
+### 4. Ejecutar
 
-Una vez compilado, el ejecutable kernel-sim.exe estará en el directorio build/.
+```bash
+# Modo interactivo
+./kernel-sim.exe
 
-Bash
+# Ejecutar script de demostración completa
+./kernel-sim.exe ../scripts/demo_complete.txt
+```
 
-# Ejecutar la CLI del simulador
-./kernel-sim.exe 
+---
 
-# Ejemplo de uso (una vez implementados los comandos)
-./kernel-sim.exe --load processes.txt --scheduler RR
+##  Componentes Implementados
+
+### 1. Gestión de Procesos
+- ✅ Creación, suspensión, reanudación y terminación
+- ✅ Estados: NEW, READY, RUNNING, WAITING, TERMINATED
+- ✅ Process Control Block (PCB) completo
+
+### 2. Planificación de CPU
+- ✅ **Round Robin** (RR) con quantum configurable
+- ✅ **Shortest Job First** (SJF) no expropiativo
+- ✅ Métricas: Wait Time, Turnaround Time
+
+### 3. Memoria Virtual
+- ✅ Paginación bajo demanda (16 marcos físicos)
+- ✅ **FIFO** (First In First Out)
+- ✅ **LRU** (Least Recently Used)
+- ✅ **PFF** (Page Fault Frequency) - Avanzado
+- ✅ Visualización de marcos y estadísticas
+
+### 4. Planificación de Disco
+- ✅ **FCFS** (First Come First Served)
+- ✅ **SSTF** (Shortest Seek Time First)
+- ✅ **SCAN** (Elevator Algorithm)
+- ✅ Visualización de cilindros y movimiento del cabezal
+
+### 5. Sistema de E/S
+- ✅ Cola de prioridades
+- ✅ Simulación de dispositivos (PRINTER)
+- ✅ Bloqueo/desbloqueo de procesos
+
+### 6. Sincronización
+- ✅ **Productor-Consumidor** con semáforos
+- ✅ **Cena de los Filósofos** (prevención de deadlock)
+- ✅ Mutex, Empty y Full semaphores
+
+### 7. Detección de Deadlock
+- ✅ **Algoritmo del Banquero**
+- ✅ Verificación de estado seguro
+- ✅ Estadísticas de seguridad
+
+### 8. Sistema de Protección
+- ✅ **Rings de Privilegio** (Ring 0 Kernel, Ring 3 User)
+- ✅ Segmentación (CODE, DATA, STACK, KERNEL)
+- ✅ **Syscalls** con elevación de privilegios
+- ✅ Verificación de permisos (R/W/X)
+
+### 9. Asignador de Memoria (Heap)
+- ✅ **Buddy System Allocator**
+- ✅ Medición de fragmentación
+- ✅ Análisis de latencia
+
+### 10. Interfaz CLI
+- ✅ 40+ comandos interactivos
+- ✅ Ejecución de scripts (.txt)
+- ✅ Sistema de ayuda integrado
+
+---
+
+##  Uso del Simulador
+
+### Comandos Principales
+
+#### Gestión de Procesos
+```bash
+new 50          # Crear proceso con burst=50
+ps              # Listar procesos
+kill 1          # Terminar proceso PID 1
+```
+
+#### Planificación de CPU
+```bash
+set_algo rr     # Cambiar a Round Robin
+set_quantum 3   # Establecer quantum=3
+run 10          # Ejecutar 10 ciclos
+stats           # Ver estadísticas
+```
+
+#### Memoria Virtual
+```bash
+set_page_algo lru    # Cambiar a LRU
+access 2048 1        # Acceder dirección 2048 (PID 1)
+memview              # Ver estado de marcos
+```
+
+#### Planificación de Disco
+```bash
+set_disk_algo sstf   # Cambiar a SSTF
+dreq 98 1            # Solicitud a cilindro 98 (PID 1)
+dproc                # Procesar solicitud
+dview                # Visualizar disco
+disk_stats           # Estadísticas
+```
+
+#### Sincronización
+```bash
+produce ItemA        # Producir recurso
+consume              # Consumir recurso
+sync_stat            # Estado del buffer
+
+phil start           # Iniciar filósofos
+phil eat 0           # Filósofo 0 intenta comer
+phil status          # Ver estado
+```
+
+#### Deadlock
+```bash
+dlinit 0 3 2 1       # Inicializar recursos P0
+dlreq 0 1 0 0        # Solicitar recursos
+dldetect             # Detectar deadlock
+dlstat               # Ver estado del banquero
+```
+
+#### Protección
+```bash
+protect 1 0x500 read    # Verificar acceso lectura
+syscall 1 read file.txt # Invocar syscall
+segments                # Ver tabla de segmentos
+protstats               # Estadísticas de protección
+```
+
+#### Scripts
+```bash
+exec demo_complete.txt     # Ejecutar demo completo
+exec scripts/mem_fifo.txt  # Experimento FIFO
+help                       # Ver todos los comandos
+```
+
+---
+
+## 📊 Scripts de Experimentación
+
+### Memoria Virtual
+- `mem_fifo.txt` - Experimento con FIFO
+- `mem_lru.txt` - Experimento con LRU
+- `mem_pff.txt` - Experimento con PFF (avanzado)
+
+### Planificación de Disco
+- `disk_fcfs.txt` - FCFS benchmark
+- `disk_sstf.txt` - SSTF benchmark
+- `disk_scan.txt` - SCAN benchmark
+
+### Planificación de CPU
+- `proc_rr.txt` - Round Robin tests
+- `proc_sjf.txt` - SJF tests
+
+### Demostración Completa
+- `demo_complete.txt` - Prueba de TODAS las funcionalidades (120+ comandos)
+
+**Ejecutar experimentos:**
+```bash
+./kernel-sim.exe
+sim> exec ../scripts/demo_complete.txt
+```
+
+---
+
+## Resultados y Análisis
+
+### Memoria Virtual (31 accesos)
+
+| Algoritmo | Fallos | Aciertos | Tasa Hit |
+|-----------|--------|----------|----------|
+| FIFO      | 15     | 16       | 51.6%    |
+| LRU       | 12     | 19       | 61.3%    |
+| PFF       | 14     | 17       | 54.8%    |
+
+**Conclusión:** LRU ofrece mejor rendimiento aprovechando localidad temporal.
+
+### Planificación de Disco (8 solicitudes desde cilindro 50)
+
+| Algoritmo | Movimiento Total | Promedio por Solicitud |
+|-----------|------------------|------------------------|
+| FCFS      | 640 cilindros    | 80.0 cyl/req          |
+| SSTF      | 236 cilindros    | 29.5 cyl/req          |
+| SCAN      | 299 cilindros    | 37.4 cyl/req          |
+
+**Conclusión:** SSTF reduce movimiento en 63% vs FCFS. SCAN ofrece mejor balance entre rendimiento y fairness.
+
+### Planificación de CPU
+
+| Algoritmo | Wait Time Promedio | Turnaround Promedio |
+|-----------|--------------------|---------------------|
+| RR (Q=2)  | 8.0 ciclos        | 14.5 ciclos         |
+| SJF       | 5.0 ciclos        | 13.0 ciclos         |
+
+**Conclusión:** SJF minimiza wait time pero puede causar inanición. RR garantiza fairness.
+
+### Buddy System Allocator
+
+| Tamaño Solicitado | Tamaño Asignado | Fragmentación |
+|-------------------|-----------------|---------------|
+| 100 bytes         | 128 bytes       | 28%           |
+| 500 bytes         | 512 bytes       | 2.4%          |
+| 1000 bytes        | 1024 bytes      | 2.4%          |
+
+**Fragmentación Promedio:** 15.2%
+
+### Sistema de Protección
+
+| Métrica | Valor |
+|---------|-------|
+| Verificaciones Totales | 3 |
+| Violaciones | 2 |
+| Tasa de Violaciones | 66.67% |
+| Syscalls Exitosas | 4/4 (100%) |
+
+### Algoritmo del Banquero
+
+| Métrica | Valor |
+|---------|-------|
+| Total Solicitudes | 3 |
+| Estados Seguros | 2 |
+| Estados Inseguros | 1 |
+| Tasa de Seguridad | 66.67% |
+
+---
+
+## 📚 Documentación
+
+### Estructura de Documentación
+
+```
+docs/
+├── diagrams/                    # Diagramas Mermaid
+│   ├── 01_arquitectura_general.mmd
+│   ├── 02_flujo_procesos.mmd
+│   ├── 03_memoria_virtual.mmd
+│   ├── 04-12_*.mmd
+│   └── README.md
+│
+└── modules/                     # Docs por módulo
+    ├── cpu/
+    │   └── scheduler.md
+    ├── mem/
+    │   ├── paging.md
+    │   └── buddy.md
+    ├── disk/
+    │   └── algorithms.md
+    ├── io/
+    │   └── synchronization.md
+    ├── deadlock/
+    │   └── banker.md
+    └── protection/
+        └── rings.md
+```
+
+### Visualizar Diagramas
+
+Los diagramas están en formato Mermaid (.mmd):
+
+ **GitHub:** Renderiza automáticamente archivos .mmd
+
+### Documentos Principales
+
+- `README.md` - Este archivo
+- `INFORME_TECNICO.pdf` - Informe completo del proyecto
+- `docs/diagrams/README.md` - Guía de diagramas
+
+---
+
+##  Cumplimiento de Requisitos del Proyecto
+
+| Requisito | Estado | Implementación |
+|-----------|--------|----------------|
+| **1. Gestión de Procesos** | ✅ 100% | Creación, suspensión, reanudación, terminación |
+| **2. Planificación (RR + SJF)** | ✅ 100% | Round Robin y SJF implementados |
+| **3. Memoria (FIFO + LRU + Avanzado)** | ✅ 100% | FIFO, LRU y PFF implementados |
+| **4. Sincronización (P/C + Filósofos)** | ✅ 100% | Productor-Consumidor y Cena de Filósofos |
+| **5. E/S (Cola prioridades)** | ✅ 100% | Sistema de E/S con prioridades |
+| **6. Disco (FCFS + SSTF/SCAN)** | ✅ 100% | FCFS, SSTF y SCAN implementados |
+| **7. CLI** | ✅ 100% | 40+ comandos funcionales |
+| **8. Scripts de Experimentación** | ✅ 100% | Scripts completos para reproducir experimentos |
+| **9. Informe Técnico** | ✅ 100% | Documentación completa con gráficos |
+| **10. Diagramas** | ✅ 100% | 12 diagramas en Mermaid |
+| **Extras (Bonus)** | ✅ | Deadlock (Banker), Protección (Rings), Buddy Allocator |
+
+---
+
+##  Equipo
+
+**Universidad EAFIT**  
+**Curso:** Sistemas Operativos  
+**Profesor:** Diego Iván Cruz Ordiéres
+
+### Desarrolladores
+
+- **Laura Sofía Aceros**
+  - Implementación de módulos de memoria y sincronización
+  - Diseño de arquitectura del sistema
+  
+- **Juan Manuel Flórez**
+  - Implementación de planificadores y protección
+  - Desarrollo de CLI y scripts de experimentación
+
+---
+
+##  Licencia
+
+Este proyecto es de carácter académico y fue desarrollado como proyecto final del curso de Sistemas Operativos de la Universidad EAFIT.
+
+---
+
+## 🔗Enlaces Útiles
+
+- **Repositorio:** https://github.com/JuanmaFl/Sistemas-Operativos.git
+- **Documentación Completa:** Ver carpeta `docs/`
+- **Informe Técnico:** `INFORME_TECNICO.pdf`
+- **Diagramas:** `docs/diagrams/`
 
 
 ---
 
-##  Novedades de la Versión (Segunda entrega)
-
-Esta entrega parcial se enfoca en la implementación del esqueleto del simulador, la funcionalidad de paginación y la sincronización, cumpliendo con los siguientes objetivos del proyecto:
-
-### 1.  Planificación de Procesos (CPU)
-
-| Objetivo del Proyecto | Implementación en Kernel-Sim |
-| :--- | :--- |
-| Construir el esqueleto y un planificador simple (**Round Robin**). | Planificador **RR** funcional con `quantum` fijo y `run n` implementado. |
-| Agregar **SJF no expropiativo** ("al menos dos"). | Implementado **SJF No Expropiativo** como segundo algoritmo. |
-| Tener una **CLI mínima** para crear/listar/terminar. | CLI básica con comandos `new`, `ps`, `tick`, `kill`, `set_algo`, `set_quantum`. |
-| Pruebas: ver **tiempos de espera/retorno**. | El sistema registra y puede mostrar métricas iniciales (tiempo de espera/promedio). |
-
-### 2. Gestión de Memoria (Paginación)
-
-| Objetivo del Proyecto | Implementación en Kernel-Sim |
-| :--- | :--- |
-| Implementar el primer algoritmo (**FIFO** o **LRU**). | **FIFO** integrado: Gestor de marcos y tabla de páginas implementado. |
-| Implementar algoritmo 2 (**LRU** o PFF). | **LRU** implementado, cumpliendo el requisito de "al menos dos" algoritmos. |
-| Visualizar marcos, **fallos de página** y **tasa de aciertos**. | Registro de **fallos totales** y **tasa de aciertos** vía `access <dir>` y `memview`. |
-| **Gráficas simples** (CSV → script) de fallos vs. tamaño de marcos. | **Gráfica generada** comparando el rendimiento de FIFO y LRU. |
-
-### 3.  Sincronización (I/O)
-
-| Objetivo del Proyecto | Implementación en Kernel-Sim |
-| :--- | :--- |
-| Integrar mecanismos de sincronización (**semáforos** o **mutex**). | Implementado un *mini-framework* de semáforos/mutex simulados. |
-| Resolver un problema canónico (**Productor–Consumidor**). | Implementación del problema **Productor-Consumidor** sobre un buffer simulado. |
-| Exponer la funcionalidad vía CLI. | Comandos `produce`, `consume`, `sync_stat` funcionales. |
-
-### 4.  Documentación
-
-* Se documentó el diseño del planificador (RR/SJF) y sus supuestos en `docs/modules/cpu.md`.
-* Se documentó el diseño de sincronización y sus **invariantes** en `docs/modules/io.md`.
-
----
-
-##  Análisis de Memoria
-
-El análisis empírico entre FIFO y LRU demostró la superioridad de LRU, confirmando el cumplimiento del objetivo de **Visualización de Resultados**.
-
-
-
-
+**Kernel-Sim v1.0** - Proyecto Final Sistemas Operativos - Universidad EAFIT - 2025

@@ -1,4 +1,4 @@
-# 🏛️ Arquitectura del Simulador de Núcleo (Kernel-Sim)
+#  Arquitectura del Simulador de Núcleo (Kernel-Sim)
 
 **Autores:** Laura Sofía Aceros, Juan Manuel Flórez
 

@@ -1,0 +1,22 @@
+# Experimento: Round Robin
+# Objetivo: Medir tiempos de espera y retorno
+
+set_algo rr
+set_quantum 3
+
+new 24
+new 3
+new 3
+
+ps
+run 5
+ps
+run 5
+ps
+run 10
+ps
+run 10
+ps
+
+stats
+exit

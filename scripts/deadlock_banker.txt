@@ -1,0 +1,29 @@
+# Experimento: Algoritmo del Banquero
+# Objetivo: Prevención de deadlock
+
+dlinit 0 3 2 1
+dlinit 1 2 1 1
+dlinit 2 2 2 1
+
+dlstat
+dldetect
+
+dlreq 0 1 0 0
+dlstat
+dldetect
+
+dlreq 1 1 0 0
+dlstat
+dldetect
+
+dlreq 0 1 1 0
+dlstat
+dldetect
+
+dlrel 0 1 0 0
+dlreq 1 1 1 0
+dlstat
+dldetect
+
+dlstats
+exit

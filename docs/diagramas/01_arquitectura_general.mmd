@@ -1,0 +1,35 @@
+graph TB
+    subgraph Kernel["KERNEL SIMULATOR v0.1"]
+        Core["KernelSimulator Core<br/>current_time: 23"]
+    end
+    
+    Core --> Scheduler["Scheduler<br/>- Round Robin (Q=2)<br/>- SJF"]
+    Core --> Memory["Memory Manager<br/>- FIFO<br/>- LRU<br/>- PFF<br/>16 Frames"]
+    Core --> Disk["Disk Scheduler<br/>- FCFS<br/>- SSTF<br/>- SCAN<br/>200 Cylinders"]
+    Core --> IO["I/O Manager<br/>Priority Queue<br/>PRINTER"]
+    
+    Scheduler --> PCB["Process Control Block<br/>PID | State | Burst | Rem | Wait<br/>1 | RUN | 10 | 1 | 14<br/>4 | READY | 20 | 20 | 8<br/>5 | READY | 30 | 30 | 2<br/>6 | READY | 40 | 40 | 1"]
+    
+    Core --> Deadlock["Deadlock Detector<br/>Banker Algorithm<br/>Resources: [3,3,2]<br/>Safety: 66.67%"]
+    Core --> Protection["Protection Manager<br/>Rings 0/3<br/>Segments: CODE, DATA, STACK, KERNEL"]
+    Core --> Sync["Synchronization<br/>Semaphores: Mutex, Empty, Full<br/>P/C Buffer: 5"]
+    Core --> Phil["Dining Philosophers<br/>5 Philosophers<br/>5 Forks<br/>Max at table: 4"]
+    Core --> Syscall["Syscall Handler<br/>READ, WRITE, ALLOC, FORK<br/>Total: 4 calls"]
+    
+    Syscall --> Protection
+    Phil --> Sync
+    
+    Core --> CLI["Command Line Interface<br/>40+ Commands<br/>Script Execution"]
+    
+    style Kernel fill:#e1f5ff
+    style Core fill:#bbdefb
+    style Scheduler fill:#c8e6c9
+    style Memory fill:#fff9c4
+    style Disk fill:#ffccbc
+    style IO fill:#f8bbd0
+    style Deadlock fill:#d1c4e9
+    style Protection fill:#ffccbc
+    style Sync fill:#c5cae9
+    style Phil fill:#b2dfdb
+    style Syscall fill:#ffe0b2
+    style CLI fill:#f0f4c3

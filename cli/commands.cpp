@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <cctype>
 #include <vector>
+#include <fstream>
 
 extern KernelSimulator kernel;
 
@@ -408,12 +409,45 @@ void handle_command(const std::string& line) {
 			std::cout << "[ERROR] 'kill' requiere el ID del proceso." << std::endl;
 		}
 	}
+	else if (command == "exec") {
+		if (command_parts.size() != 2) {
+			std::cout << "[ERROR] Uso: exec <archivo.txt>" << std::endl;
+			return;
+		}
+
+		std::string script_file = command_parts[1];
+		std::ifstream file(script_file);
+
+		if (!file.is_open()) {
+			std::cout << "[ERROR] No se pudo abrir: " << script_file << std::endl;
+			return;
+		}
+
+		std::string line;
+		int executed = 0;
+
+		std::cout << "[EXEC] Ejecutando script: " << script_file << std::endl;
+
+		while (std::getline(file, line)) {
+			if (line.empty() || line[0] == '#') continue;
+
+			std::cout << "  > " << line << std::endl;
+			handle_command(line);
+			executed++;
+		}
+
+		file.close();
+		std::cout << "[EXEC] " << executed << " comandos ejecutados." << std::endl;
+		}
 	else if (command == "exit") {
 		std::cout << "Saliendo del simulador." << std::endl;
 		exit(0);
 	}
 	else if (command == "help") {
-		std::cout << "\n--- Comandos Disponibles ---" << std::endl;
+		std::cout << "\n========================================" << std::endl;
+		std::cout << "    KERNEL-SIM v0.1 - AYUDA COMPLETA" << std::endl;
+		std::cout << "========================================" << std::endl;
+
 		std::cout << "\n[PROCESOS]" << std::endl;
 		std::cout << "new <burst>: Crea un proceso con el tiempo de ráfaga especificado." << std::endl;
 		std::cout << "ps: Lista todos los procesos y su estado." << std::endl;
@@ -470,11 +504,47 @@ void handle_command(const std::string& line) {
 		std::cout << "phil think <id>: Filósofo ID piensa (0-4)." << std::endl;
 		std::cout << "phil eat <id>: Filósofo ID intenta comer (0-4)." << std::endl;
 
+		std::cout << "\n[SCRIPTS]" << std::endl;
+		std::cout << "exec <archivo>: Ejecuta comandos desde un archivo de script." << std::endl;
+
 		std::cout << "\n[GENERAL]" << std::endl;
 		std::cout << "stats: Muestra todas las métricas de rendimiento." << std::endl;
 		std::cout << "exit: Sale del simulador." << std::endl;
-		std::cout << "----------------------------\n" << std::endl;
-	}
+
+		std::cout << "\n========================================" << std::endl;
+		std::cout << "       SCRIPTS DISPONIBLES" << std::endl;
+		std::cout << "========================================" << std::endl;
+
+		std::cout << "\n[MEMORIA]" << std::endl;
+		std::cout << "scripts/mem_fifo.txt       - Experimento con FIFO" << std::endl;
+		std::cout << "scripts/mem_lru.txt        - Experimento con LRU" << std::endl;
+		std::cout << "scripts/mem_pff.txt        - Experimento con PFF" << std::endl;
+		std::cout << "scripts/mem_trace.txt      - Traza básica de memoria" << std::endl;
+
+		std::cout << "\n[DISCO]" << std::endl;
+		std::cout << "scripts/disk_fcfs.txt      - Planificación FCFS" << std::endl;
+		std::cout << "scripts/disk_sstf.txt      - Planificación SSTF" << std::endl;
+		std::cout << "scripts/disk_scan.txt      - Planificación SCAN" << std::endl;
+		std::cout << "scripts/disk_requests.txt  - Solicitudes de disco" << std::endl;
+
+		std::cout << "\n[PROCESOS]" << std::endl;
+		std::cout << "scripts/proc_rr.txt        - Round Robin" << std::endl;
+		std::cout << "scripts/proc_sjf.txt       - Shortest Job First" << std::endl;
+
+		std::cout << "\n[SINCRONIZACIÓN]" << std::endl;
+		std::cout << "scripts/sync_philosophers.txt  - Cena de los Filósofos" << std::endl;
+
+		std::cout << "\n[PROTECCIÓN Y SEGURIDAD]" << std::endl;
+		std::cout << "scripts/protection_test.txt    - Sistema de protección" << std::endl;
+		std::cout << "scripts/deadlock_banker.txt    - Algoritmo del Banquero" << std::endl;
+
+		std::cout << "\n[DEMOSTRACIÓN COMPLETA]" << std::endl;
+		std::cout << "scripts/demo_complete.txt      - Demo de todas las funciones" << std::endl;
+
+		std::cout << "\n========================================" << std::endl;
+		std::cout << "Uso: exec scripts/mem_fifo.txt" << std::endl;
+		std::cout << "========================================\n" << std::endl;
+		}
 	else {
 		std::cout << "[ERROR] Comando desconocido. Use 'help'." << std::endl;
 	}
