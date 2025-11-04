@@ -18,9 +18,19 @@ Makefile
 # Ignorar carpetas de Visual Studio/IDE
 .vs/
 *.ipch
-
+.vscode/
+*.sln
+*.user
 # También es buena idea ignorar todos los archivos de build:
 build/
 out/
 *.exe
-*.obj
+
+# Temporales
+*.log
+*.tmp
+*~
+
+# Google Test
+Testing/
+EOF
