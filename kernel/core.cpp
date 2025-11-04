@@ -6,9 +6,7 @@
 #include <memory>
 #include <string>
 
-
 // CONSTRUCTOR / DESTRUCTOR
-
 
 KernelSimulator::KernelSimulator()
     : current_time(0) {
@@ -19,17 +17,18 @@ KernelSimulator::KernelSimulator()
     deadlock_detector = std::make_unique<DeadlockDetector>();
     protection_manager = std::make_unique<ProtectionManager>();
     syscall_handler = std::make_unique<SyscallHandler>(protection_manager.get());
-    std::cout << "========================================" << std::endl;
-    std::cout << " Simulador de Nucleo (Kernel-Sim) v0.1" << std::endl;
-    std::cout << "========================================" << std::endl;
-    std::cout << "[SCHEDULER] Inicializado con algoritmo RR (Quantum: 3)." << std::endl;
-    std::cout << "[DISK] Planificador de disco inicializado." << std::endl;
-    std::cout << "[IO] Sistema de E/S inicializado." << std::endl;
-    std::cout << "Kernel Simulator inicializado." << std::endl;
+
+    std::cout << "\033[1;36m========================================\033[0m" << std::endl;
+    std::cout << "\033[1;35m  Simulador de Núcleo (Kernel-Sim) v0.1\033[0m" << std::endl;
+    std::cout << "\033[1;36m========================================\033[0m" << std::endl;
+    std::cout << "\033[32m[SCHEDULER]\033[0m Inicializado con algoritmo RR (Quantum: 3)." << std::endl;
+    std::cout << "\033[32m[DISK]\033[0m Planificador de disco inicializado." << std::endl;
+    std::cout << "\033[32m[IO]\033[0m Sistema de E/S inicializado." << std::endl;
+    std::cout << "\033[1;32m✓ Kernel Simulator inicializado.\033[0m" << std::endl;
 }
 
 KernelSimulator::~KernelSimulator() {
-    std::cout << "Kernel Simulator finalizado." << std::endl;
+    std::cout << "\033[33mKernel Simulator finalizado. ¡Adiós!\033[0m" << std::endl;
 }
 
 

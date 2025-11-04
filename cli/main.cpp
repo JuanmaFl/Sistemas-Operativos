@@ -2,37 +2,56 @@
 #include <string>
 #include <vector>
 
-// Incluir el Kernel y la función de manejo de comandos
-#include "kernel/core.h"
-#include "commands.h" 
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
-//  IMPORTANTE: Instancia global del kernel
-// Esto permite que la función handle_command (en commands.cpp) acceda al kernel.
+#include "kernel/core.h"
+#include "commands.h"
+
+// Instancia global del kernel
 KernelSimulator kernel;
 
-int main(int argc, char* argv[]) {
-    // El constructor de 'kernel' ya imprime la cabecera.
+void setup_console_utf8() {
+#ifdef _WIN32
+    // Configurar UTF-8 en consola Windows
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
 
-    // Si se dan argumentos (ej. ./kernel-sim.exe --load file.txt), podemos procesarlos.
+    // Habilitar secuencias ANSI (colores)
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    DWORD dwMode = 0;
+    GetConsoleMode(hOut, &dwMode);
+    dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+    SetConsoleMode(hOut, dwMode);
+#else
+    // En Linux/Mac, UTF-8 suele estar habilitado por defecto
+    std::cout.imbue(std::locale(""));
+#endif
+}
+
+int main(int argc, char* argv[]) {
+    // ✨ NUEVO: Configurar UTF-8 y colores
+    setup_console_utf8();
+
+    // El constructor de 'kernel' ya imprime la cabecera (ahora con UTF-8)
+
+    // Procesar argumentos de línea de comandos
     if (argc > 1) {
-        // Por ahora, solo muestra que no hay soporte avanzado y ejecuta la lógica principal
-        std::cout << "[INFO] Argumentos de línea de comandos detectados. Procesando..." << std::endl;
-        // Más tarde, aquí se llamaría a una función para parsear 'argv'
+        std::cout << "\033[36m[INFO]\033[0m Argumentos de línea de comandos detectados. Procesando..." << std::endl;
     }
 
-    std::cout << "\nUse 'help' para ver los comandos. Inicie con 'new <burst>'." << std::endl;
+    std::cout << "\n\033[1;32m✓ Sistema listo.\033[0m Use 'help' para ver los comandos. Inicie con 'new <burst>'." << std::endl;
 
-    
     std::string line;
     while (true) {
-        std::cout << "sim> ";
+        std::cout << "\033[1;34msim>\033[0m ";
         if (!std::getline(std::cin, line)) {
             break; // Sale si falla la lectura (ej. EOF)
         }
 
-        // La función implementada en commands.cpp maneja la entrada
         handle_command(line);
     }
 
-    return 0; // Se llama al destructor del 'kernel' al salir.
+    return 0;
 }

@@ -1,6 +1,7 @@
 // cli/commands.cpp
 
 #include "commands.h"
+#include "colors.h"
 #include "kernel/core.h"
 #include "kernel/scheduler.h"
 #include "../modules/mem/memory_manager.h"
@@ -42,7 +43,7 @@ void handle_command(const std::string& line) {
 			kernel.new_process(burst);
 		}
 		else {
-			std::cout << "[ERROR] 'new' requiere un tiempo de ráfaga (burst > 0)." << std::endl;
+			print_error("'new' requiere un tiempo de ráfaga (burst > 0).");
 		}
 	}
 	else if (command == "tick") {
@@ -54,7 +55,7 @@ void handle_command(const std::string& line) {
 			kernel.run_cycles(cycles);
 		}
 		else {
-			std::cout << "[ERROR] 'run' requiere un número de ciclos positivo." << std::endl;
+			print_error("'run' requiere un número de ciclos positivo.");
 		}
 	}
 	else if (command == "ps") {
@@ -73,11 +74,11 @@ void handle_command(const std::string& line) {
 				kernel.set_quantum(quantum);
 			}
 			else {
-				std::cout << "[ERROR] 'set_quantum' requiere un valor de quantum positivo." << std::endl;
+				print_error("'set_quantum' requiere un valor de quantum positivo.");
 			}
 		}
 		else {
-			std::cout << "[ERROR] Uso: set_quantum <n>" << std::endl;
+			print_error("Uso: set_quantum <n>");
 		}
 	}
 	else if (command == "set_algo") {
@@ -87,18 +88,18 @@ void handle_command(const std::string& line) {
 
 			if (algo == "rr") {
 				kernel.set_scheduler_algorithm(SchedulerAlgorithm::ROUND_ROBIN);
-				std::cout << "[INFO] Planificador cambiado a: Round Robin (RR)." << std::endl;
+				print_info("Planificador cambiado a: Round Robin (RR).");
 			}
 			else if (algo == "sjf") {
 				kernel.set_scheduler_algorithm(SchedulerAlgorithm::SJF);
-				std::cout << "[INFO] Planificador cambiado a: Shortest Job First (SJF) No Expropiativo." << std::endl;
+				print_info("Planificador cambiado a: Shortest Job First (SJF) No Expropiativo.");
 			}
 			else {
-				std::cout << "[ERROR] Algoritmo no reconocido. Opciones: rr, sjf." << std::endl;
+				print_error("Algoritmo no reconocido. Opciones: rr, sjf.");
 			}
 		}
 		else {
-			std::cout << "[ERROR] 'set_algo' requiere especificar el algoritmo (ej. set_algo sjf)." << std::endl;
+			print_error("'set_algo' requiere especificar el algoritmo (ej. set_algo sjf).");
 		}
 	}
 	else if (command == "set_page_algo") {
@@ -108,22 +109,22 @@ void handle_command(const std::string& line) {
 
 			if (algo == "fifo") {
 				kernel.set_replacement_algorithm(ReplacementAlgorithm::FIFO);
-				std::cout << "[INFO] Algoritmo de reemplazo de páginas cambiado a: FIFO." << std::endl;
+				print_info("Algoritmo de reemplazo de páginas cambiado a: FIFO.");
 			}
 			else if (algo == "lru") {
 				kernel.set_replacement_algorithm(ReplacementAlgorithm::LRU);
-				std::cout << "[INFO] Algoritmo de reemplazo de páginas cambiado a: LRU (Least Recently Used)." << std::endl;
+				print_info("Algoritmo de reemplazo de páginas cambiado a: LRU (Least Recently Used).");
 			}
 			else if (algo == "pff") {
 				kernel.set_replacement_algorithm(ReplacementAlgorithm::PFF);
-				std::cout << "[INFO] Algoritmo de reemplazo de páginas cambiado a: PFF (Page Fault Frequency)." << std::endl;
+				print_info("Algoritmo de reemplazo de páginas cambiado a: PFF (Page Fault Frequency).");
 			}
 			else {
-				std::cout << "[ERROR] Algoritmo no reconocido. Opciones: fifo, lru, pff." << std::endl;
+				print_error("Algoritmo no reconocido. Opciones: fifo, lru, pff.");
 			}
 		}
 		else {
-			std::cout << "[ERROR] 'set_page_algo' requiere especificar el algoritmo (ej. set_page_algo lru)." << std::endl;
+			print_error("'set_page_algo' requiere especificar el algoritmo (ej. set_page_algo lru).");
 		}
 	}
 	else if (command == "access") {
@@ -135,7 +136,7 @@ void handle_command(const std::string& line) {
 				target_pid = kernel.get_running_process_id();
 			}
 			else {
-				std::cout << "[ERROR] 'access' requiere una dirección virtual positiva (ej. access 2000)." << std::endl;
+				print_error("'access' requiere una dirección virtual positiva (ej. access 2000).");
 				return;
 			}
 		}
@@ -144,17 +145,17 @@ void handle_command(const std::string& line) {
 				std::stringstream(command_parts[2]) >> target_pid && target_pid > 0) {
 			}
 			else {
-				std::cout << "[ERROR] Formato incorrecto. Uso: 'access <dir>' o 'access <dir> <pid>'." << std::endl;
+				print_error("Formato incorrecto. Uso: 'access <dir>' o 'access <dir> <pid>'.");
 				return;
 			}
 		}
 		else {
-			std::cout << "[ERROR] 'access' requiere una dirección (y opcionalmente un PID)." << std::endl;
+			print_error("'access' requiere una dirección (y opcionalmente un PID).");
 			return;
 		}
 
 		if (target_pid == -1) {
-			std::cout << "[ERROR] No hay un proceso en ejecución para acceder a la memoria (PID no encontrado)." << std::endl;
+			print_error("No hay un proceso en ejecución para acceder a la memoria (PID no encontrado).");
 			return;
 		}
 
@@ -169,7 +170,7 @@ void handle_command(const std::string& line) {
 				kernel.disk_request(cylinder);
 			}
 			else {
-				std::cout << "[ERROR] 'dreq' requiere un número de cilindro válido (0-199)." << std::endl;
+				print_error("'dreq' requiere un número de cilindro válido (0-199).");
 			}
 		}
 		else if (command_parts.size() == 3) {
@@ -178,11 +179,11 @@ void handle_command(const std::string& line) {
 				kernel.disk_request(target_pid, cylinder);
 			}
 			else {
-				std::cout << "[ERROR] Formato incorrecto. Uso: 'dreq <cilindro>' o 'dreq <cilindro> <pid>'." << std::endl;
+				print_error("Formato incorrecto. Uso: 'dreq <cilindro>' o 'dreq <cilindro> <pid>'.");
 			}
 		}
 		else {
-			std::cout << "[ERROR] 'dreq' requiere al menos el número de cilindro." << std::endl;
+			print_error("'dreq' requiere al menos el número de cilindro.");
 		}
 	}
 	else if (command == "disk_process" || command == "dproc") {
@@ -204,34 +205,34 @@ void handle_command(const std::string& line) {
 
 			if (algo == "fcfs") {
 				kernel.set_disk_algorithm(DiskAlgorithm::FCFS);
-				std::cout << "[INFO] Algoritmo de disco cambiado a: FCFS." << std::endl;
+				print_info("Algoritmo de disco cambiado a: FCFS.");
 			}
 			else if (algo == "sstf") {
 				kernel.set_disk_algorithm(DiskAlgorithm::SSTF);
-				std::cout << "[INFO] Algoritmo de disco cambiado a: SSTF." << std::endl;
+				print_info("Algoritmo de disco cambiado a: SSTF.");
 			}
 			else if (algo == "scan") {
 				kernel.set_disk_algorithm(DiskAlgorithm::SCAN);
-				std::cout << "[INFO] Algoritmo de disco cambiado a: SCAN." << std::endl;
+				print_info("Algoritmo de disco cambiado a: SCAN.");
 			}
 			else {
-				std::cout << "[ERROR] Algoritmo no reconocido. Opciones: fcfs, sstf, scan." << std::endl;
+				print_error("Algoritmo no reconocido. Opciones: fcfs, sstf, scan.");
 			}
 		}
 		else {
-			std::cout << "[ERROR] 'set_disk_algo' requiere especificar el algoritmo (ej. set_disk_algo sstf)." << std::endl;
+			print_error("'set_disk_algo' requiere especificar el algoritmo (ej. set_disk_algo sstf).");
 		}
 	}
 	else if (command == "ioreq") {
 		if (command_parts.size() < 3) {
-			std::cout << "[ERROR] Uso: ioreq <prioridad> <tiempo> [datos]" << std::endl;
+			print_error("Uso: ioreq <prioridad> <tiempo> [datos]");
 			return;
 		}
 
 		int priority, service_time;
 		if (!(std::stringstream(command_parts[1]) >> priority && priority >= 0) ||
 			!(std::stringstream(command_parts[2]) >> service_time && service_time > 0)) {
-			std::cout << "[ERROR] Prioridad y tiempo deben ser números válidos." << std::endl;
+			print_error("Prioridad y tiempo deben ser números válidos.");
 			return;
 		}
 
@@ -249,7 +250,7 @@ void handle_command(const std::string& line) {
 	}
 	else if (command == "dlinit") {
 		if (command_parts.size() != 5) {
-			std::cout << "[ERROR] Uso: dlinit <pid> <r1> <r2> <r3>" << std::endl;
+			print_error("Uso: dlinit <pid> <r1> <r2> <r3>");
 			return;
 		}
 
@@ -261,12 +262,12 @@ void handle_command(const std::string& line) {
 			kernel.deadlock_init_process(pid, { r1, r2, r3 });
 		}
 		else {
-			std::cout << "[ERROR] Parámetros inválidos." << std::endl;
+			print_error("Parámetros inválidos.");
 		}
 	}
 	else if (command == "dlreq") {
 		if (command_parts.size() != 5) {
-			std::cout << "[ERROR] Uso: dlreq <pid> <r1> <r2> <r3>" << std::endl;
+			print_error("Uso: dlreq <pid> <r1> <r2> <r3>");
 			return;
 		}
 
@@ -278,12 +279,12 @@ void handle_command(const std::string& line) {
 			kernel.deadlock_request(pid, { r1, r2, r3 });
 		}
 		else {
-			std::cout << "[ERROR] Parámetros inválidos." << std::endl;
+			print_error("Parámetros inválidos.");
 		}
 	}
 	else if (command == "dlrel") {
 		if (command_parts.size() != 5) {
-			std::cout << "[ERROR] Uso: dlrel <pid> <r1> <r2> <r3>" << std::endl;
+			print_error("Uso: dlrel <pid> <r1> <r2> <r3>");
 			return;
 		}
 
@@ -295,7 +296,7 @@ void handle_command(const std::string& line) {
 			kernel.deadlock_release(pid, { r1, r2, r3 });
 		}
 		else {
-			std::cout << "[ERROR] Parámetros inválidos." << std::endl;
+			print_error("Parámetros inválidos.");
 		}
 	}
 	else if (command == "dldetect") {
@@ -309,7 +310,7 @@ void handle_command(const std::string& line) {
 	}
 	else if (command == "protect") {
 		if (command_parts.size() != 4) {
-			std::cout << "[ERROR] Uso: protect <pid> <addr> <read|write|exec>" << std::endl;
+			print_error("Uso: protect <pid> <addr> <read|write|exec>");
 			return;
 		}
 
@@ -321,12 +322,12 @@ void handle_command(const std::string& line) {
 			kernel.check_memory_protection(pid, addr, access_type);
 		}
 		else {
-			std::cout << "[ERROR] Parámetros inválidos." << std::endl;
+			print_error("Parámetros inválidos.");
 		}
 	}
 	else if (command == "syscall") {
 		if (command_parts.size() < 3) {
-			std::cout << "[ERROR] Uso: syscall <pid> <read|write|alloc|fork|exit> [args]" << std::endl;
+			print_error("Uso: syscall <pid> <read|write|alloc|fork|exit> [args]");
 			return;
 		}
 
@@ -338,7 +339,7 @@ void handle_command(const std::string& line) {
 			kernel.invoke_syscall(pid, syscall_type, args);
 		}
 		else {
-			std::cout << "[ERROR] PID inválido." << std::endl;
+			print_error("PID inválido.");
 		}
 	}
 	else if (command == "segments") {
@@ -362,7 +363,7 @@ void handle_command(const std::string& line) {
 	}
 	else if (command == "phil") {
 		if (command_parts.size() < 2) {
-			std::cout << "[ERROR] Uso: phil <start|stop|status|think|eat> [id]" << std::endl;
+			print_error("Uso: phil <start|stop|status|think|eat> [id]");
 			return;
 		}
 
@@ -384,7 +385,7 @@ void handle_command(const std::string& line) {
 				kernel.philosopher_think(id);
 			}
 			else {
-				std::cout << "[ERROR] ID de filósofo inválido (0-4)." << std::endl;
+				print_error("ID de filósofo inválido (0-4).");
 			}
 		}
 		else if (subcmd == "eat" && command_parts.size() == 3) {
@@ -393,11 +394,11 @@ void handle_command(const std::string& line) {
 				kernel.philosopher_eat(id);
 			}
 			else {
-				std::cout << "[ERROR] ID de filósofo inválido (0-4)." << std::endl;
+				print_error("ID de filósofo inválido (0-4).");
 			}
 		}
 		else {
-			std::cout << "[ERROR] Subcomando desconocido. Uso: phil <start|stop|status|think|eat> [id]" << std::endl;
+			print_error("Subcomando desconocido. Uso: phil <start|stop|status|think|eat> [id]");
 		}
 	}
 	else if (command == "kill") {
@@ -406,12 +407,12 @@ void handle_command(const std::string& line) {
 			kernel.kill_process(id);
 		}
 		else {
-			std::cout << "[ERROR] 'kill' requiere el ID del proceso." << std::endl;
+			print_error("'kill' requiere el ID del proceso.");
 		}
 	}
 	else if (command == "exec") {
 		if (command_parts.size() != 2) {
-			std::cout << "[ERROR] Uso: exec <archivo.txt>" << std::endl;
+			print_error("Uso: exec <archivo.txt>");
 			return;
 		}
 
@@ -419,133 +420,133 @@ void handle_command(const std::string& line) {
 		std::ifstream file(script_file);
 
 		if (!file.is_open()) {
-			std::cout << "[ERROR] No se pudo abrir: " << script_file << std::endl;
+			print_error("No se pudo abrir: " + script_file);
 			return;
 		}
 
 		std::string line;
 		int executed = 0;
 
-		std::cout << "[EXEC] Ejecutando script: " << script_file << std::endl;
+		print_info("Ejecutando script: " + script_file);
 
 		while (std::getline(file, line)) {
 			if (line.empty() || line[0] == '#') continue;
 
-			std::cout << "  > " << line << std::endl;
+			std::cout << Colors::DIM << "  > " << line << Colors::RESET << std::endl;
 			handle_command(line);
 			executed++;
 		}
 
 		file.close();
-		std::cout << "[EXEC] " << executed << " comandos ejecutados." << std::endl;
-		}
+		print_success(std::to_string(executed) + " comandos ejecutados.");
+	}
 	else if (command == "exit") {
-		std::cout << "Saliendo del simulador." << std::endl;
+		print_info("Saliendo del simulador. ¡Hasta pronto!");
 		exit(0);
 	}
 	else if (command == "help") {
-		std::cout << "\n========================================" << std::endl;
-		std::cout << "    KERNEL-SIM v0.1 - AYUDA COMPLETA" << std::endl;
-		std::cout << "========================================" << std::endl;
+		print_header("\n========================================");
+		print_header("    KERNEL-SIM v0.1 - AYUDA COMPLETA");
+		print_header("========================================");
 
-		std::cout << "\n[PROCESOS]" << std::endl;
-		std::cout << "new <burst>: Crea un proceso con el tiempo de ráfaga especificado." << std::endl;
-		std::cout << "ps: Lista todos los procesos y su estado." << std::endl;
-		std::cout << "kill <id>: Termina el proceso con el ID especificado." << std::endl;
+		print_section("\n[PROCESOS]");
+		std::cout << colorize("new <burst>", Colors::YELLOW) << ": Crea un proceso con el tiempo de ráfaga especificado." << std::endl;
+		std::cout << colorize("ps", Colors::YELLOW) << ": Lista todos los procesos y su estado." << std::endl;
+		std::cout << colorize("kill <id>", Colors::YELLOW) << ": Termina el proceso con el ID especificado." << std::endl;
 
-		std::cout << "\n[PLANIFICACIÓN CPU]" << std::endl;
-		std::cout << "run <n>: Ejecuta 'n' ciclos de reloj." << std::endl;
-		std::cout << "set_algo <rr|sjf>: Selecciona algoritmo de planificación." << std::endl;
-		std::cout << "set_quantum <n>: Establece el Quantum para Round Robin." << std::endl;
+		print_section("\n[PLANIFICACIÓN CPU]");
+		std::cout << colorize("run <n>", Colors::YELLOW) << ": Ejecuta 'n' ciclos de reloj." << std::endl;
+		std::cout << colorize("set_algo <rr|sjf>", Colors::YELLOW) << ": Selecciona algoritmo de planificación." << std::endl;
+		std::cout << colorize("set_quantum <n>", Colors::YELLOW) << ": Establece el Quantum para Round Robin." << std::endl;
 
-		std::cout << "\n[MEMORIA]" << std::endl;
-		std::cout << "set_page_algo <fifo|lru|pff>: Algoritmo de reemplazo de páginas." << std::endl;
-		std::cout << "access <dir> [pid]: Simula acceso a memoria virtual." << std::endl;
-		std::cout << "memview: Muestra estado de la memoria física." << std::endl;
+		print_section("\n[MEMORIA]");
+		std::cout << colorize("set_page_algo <fifo|lru|pff>", Colors::YELLOW) << ": Algoritmo de reemplazo de páginas." << std::endl;
+		std::cout << colorize("access <dir> [pid]", Colors::YELLOW) << ": Simula acceso a memoria virtual." << std::endl;
+		std::cout << colorize("memview", Colors::YELLOW) << ": Muestra estado de la memoria física." << std::endl;
 
-		std::cout << "\n[DISCO]" << std::endl;
-		std::cout << "dreq <cilindro> [pid]: Solicitud de acceso a disco." << std::endl;
-		std::cout << "dproc: Procesa siguiente solicitud de disco." << std::endl;
-		std::cout << "dstat: Muestra estado del planificador de disco." << std::endl;
-		std::cout << "disk_stats: Muestra estadísticas de disco." << std::endl;
-		std::cout << "dview: Visualiza posición del cabezal y solicitudes." << std::endl;
-		std::cout << "set_disk_algo <fcfs|sstf|scan>: Cambia algoritmo de disco." << std::endl;
+		print_section("\n[DISCO]");
+		std::cout << colorize("dreq <cilindro> [pid]", Colors::YELLOW) << ": Solicitud de acceso a disco." << std::endl;
+		std::cout << colorize("dproc", Colors::YELLOW) << ": Procesa siguiente solicitud de disco." << std::endl;
+		std::cout << colorize("dstat", Colors::YELLOW) << ": Muestra estado del planificador de disco." << std::endl;
+		std::cout << colorize("disk_stats", Colors::YELLOW) << ": Muestra estadísticas de disco." << std::endl;
+		std::cout << colorize("dview", Colors::YELLOW) << ": Visualiza posición del cabezal y solicitudes." << std::endl;
+		std::cout << colorize("set_disk_algo <fcfs|sstf|scan>", Colors::YELLOW) << ": Cambia algoritmo de disco." << std::endl;
 
-		std::cout << "\n[E/S]" << std::endl;
-		std::cout << "ioreq <prioridad> <tiempo> [datos]: Solicitud de E/S." << std::endl;
-		std::cout << "ioproc: Procesa operación de E/S." << std::endl;
-		std::cout << "iostat: Estado del sistema de E/S." << std::endl;
-		std::cout << "io_stats: Estadísticas de E/S." << std::endl;
+		print_section("\n[E/S]");
+		std::cout << colorize("ioreq <prioridad> <tiempo> [datos]", Colors::YELLOW) << ": Solicitud de E/S." << std::endl;
+		std::cout << colorize("ioproc", Colors::YELLOW) << ": Procesa operación de E/S." << std::endl;
+		std::cout << colorize("iostat", Colors::YELLOW) << ": Estado del sistema de E/S." << std::endl;
+		std::cout << colorize("io_stats", Colors::YELLOW) << ": Estadísticas de E/S." << std::endl;
 
-		std::cout << "\n[DEADLOCK]" << std::endl;
-		std::cout << "dlinit <pid> <r1> <r2> <r3>: Inicializa recursos máximos." << std::endl;
-		std::cout << "dlreq <pid> <r1> <r2> <r3>: Solicita recursos." << std::endl;
-		std::cout << "dlrel <pid> <r1> <r2> <r3>: Libera recursos." << std::endl;
-		std::cout << "dldetect: Detecta deadlock." << std::endl;
-		std::cout << "dlstat: Estado de recursos (Banker)." << std::endl;
-		std::cout << "dlstats: Estadísticas de deadlock." << std::endl;
+		print_section("\n[DEADLOCK]");
+		std::cout << colorize("dlinit <pid> <r1> <r2> <r3>", Colors::YELLOW) << ": Inicializa recursos máximos." << std::endl;
+		std::cout << colorize("dlreq <pid> <r1> <r2> <r3>", Colors::YELLOW) << ": Solicita recursos." << std::endl;
+		std::cout << colorize("dlrel <pid> <r1> <r2> <r3>", Colors::YELLOW) << ": Libera recursos." << std::endl;
+		std::cout << colorize("dldetect", Colors::YELLOW) << ": Detecta deadlock." << std::endl;
+		std::cout << colorize("dlstat", Colors::YELLOW) << ": Estado de recursos (Banker)." << std::endl;
+		std::cout << colorize("dlstats", Colors::YELLOW) << ": Estadísticas de deadlock." << std::endl;
 
-		std::cout << "\n[PROTECCIÓN]" << std::endl;
-		std::cout << "protect <pid> <addr> <read|write|exec>: Verifica protección de memoria." << std::endl;
-		std::cout << "syscall <pid> <read|write|alloc|fork|exit> [args]: Invoca syscall." << std::endl;
-		std::cout << "segments: Muestra tabla de segmentos." << std::endl;
-		std::cout << "protstats: Estadísticas de protección." << std::endl;
-		std::cout << "syscallstats: Estadísticas de syscalls." << std::endl;
+		print_section("\n[PROTECCIÓN]");
+		std::cout << colorize("protect <pid> <addr> <read|write|exec>", Colors::YELLOW) << ": Verifica protección de memoria." << std::endl;
+		std::cout << colorize("syscall <pid> <read|write|alloc|fork|exit> [args]", Colors::YELLOW) << ": Invoca syscall." << std::endl;
+		std::cout << colorize("segments", Colors::YELLOW) << ": Muestra tabla de segmentos." << std::endl;
+		std::cout << colorize("protstats", Colors::YELLOW) << ": Estadísticas de protección." << std::endl;
+		std::cout << colorize("syscallstats", Colors::YELLOW) << ": Estadísticas de syscalls." << std::endl;
 
-		std::cout << "\n[SINCRONIZACIÓN]" << std::endl;
-		std::cout << "produce [item]: El proceso RUNNING produce un recurso." << std::endl;
-		std::cout << "consume: El proceso RUNNING consume un recurso." << std::endl;
-		std::cout << "sync_stat: Muestra estado del buffer P/C." << std::endl;
+		print_section("\n[SINCRONIZACIÓN]");
+		std::cout << colorize("produce [item]", Colors::YELLOW) << ": El proceso RUNNING produce un recurso." << std::endl;
+		std::cout << colorize("consume", Colors::YELLOW) << ": El proceso RUNNING consume un recurso." << std::endl;
+		std::cout << colorize("sync_stat", Colors::YELLOW) << ": Muestra estado del buffer P/C." << std::endl;
 
-		std::cout << "\n[FILÓSOFOS]" << std::endl;
-		std::cout << "phil start: Inicia simulación de filósofos." << std::endl;
-		std::cout << "phil stop: Detiene simulación." << std::endl;
-		std::cout << "phil status: Estado de los filósofos." << std::endl;
-		std::cout << "phil think <id>: Filósofo ID piensa (0-4)." << std::endl;
-		std::cout << "phil eat <id>: Filósofo ID intenta comer (0-4)." << std::endl;
+		print_section("\n[FILÓSOFOS]");
+		std::cout << colorize("phil start", Colors::YELLOW) << ": Inicia simulación de filósofos." << std::endl;
+		std::cout << colorize("phil stop", Colors::YELLOW) << ": Detiene simulación." << std::endl;
+		std::cout << colorize("phil status", Colors::YELLOW) << ": Estado de los filósofos." << std::endl;
+		std::cout << colorize("phil think <id>", Colors::YELLOW) << ": Filósofo ID piensa (0-4)." << std::endl;
+		std::cout << colorize("phil eat <id>", Colors::YELLOW) << ": Filósofo ID intenta comer (0-4)." << std::endl;
 
-		std::cout << "\n[SCRIPTS]" << std::endl;
-		std::cout << "exec <archivo>: Ejecuta comandos desde un archivo de script." << std::endl;
+		print_section("\n[SCRIPTS]");
+		std::cout << colorize("exec <archivo>", Colors::YELLOW) << ": Ejecuta comandos desde un archivo de script." << std::endl;
 
-		std::cout << "\n[GENERAL]" << std::endl;
-		std::cout << "stats: Muestra todas las métricas de rendimiento." << std::endl;
-		std::cout << "exit: Sale del simulador." << std::endl;
+		print_section("\n[GENERAL]");
+		std::cout << colorize("stats", Colors::YELLOW) << ": Muestra todas las métricas de rendimiento." << std::endl;
+		std::cout << colorize("exit", Colors::YELLOW) << ": Sale del simulador." << std::endl;
 
-		std::cout << "\n========================================" << std::endl;
-		std::cout << "       SCRIPTS DISPONIBLES" << std::endl;
-		std::cout << "========================================" << std::endl;
+		print_header("\n========================================");
+		print_header("       SCRIPTS DISPONIBLES");
+		print_header("========================================");
 
-		std::cout << "\n[MEMORIA]" << std::endl;
+		print_section("\n[MEMORIA]");
 		std::cout << "scripts/mem_fifo.txt       - Experimento con FIFO" << std::endl;
 		std::cout << "scripts/mem_lru.txt        - Experimento con LRU" << std::endl;
 		std::cout << "scripts/mem_pff.txt        - Experimento con PFF" << std::endl;
 		std::cout << "scripts/mem_trace.txt      - Traza básica de memoria" << std::endl;
 
-		std::cout << "\n[DISCO]" << std::endl;
+		print_section("\n[DISCO]");
 		std::cout << "scripts/disk_fcfs.txt      - Planificación FCFS" << std::endl;
 		std::cout << "scripts/disk_sstf.txt      - Planificación SSTF" << std::endl;
 		std::cout << "scripts/disk_scan.txt      - Planificación SCAN" << std::endl;
 		std::cout << "scripts/disk_requests.txt  - Solicitudes de disco" << std::endl;
 
-		std::cout << "\n[PROCESOS]" << std::endl;
+		print_section("\n[PROCESOS]");
 		std::cout << "scripts/proc_rr.txt        - Round Robin" << std::endl;
 		std::cout << "scripts/proc_sjf.txt       - Shortest Job First" << std::endl;
 
-		std::cout << "\n[SINCRONIZACIÓN]" << std::endl;
+		print_section("\n[SINCRONIZACIÓN]");
 		std::cout << "scripts/sync_philosophers.txt  - Cena de los Filósofos" << std::endl;
 
-		std::cout << "\n[PROTECCIÓN Y SEGURIDAD]" << std::endl;
+		print_section("\n[PROTECCIÓN Y SEGURIDAD]");
 		std::cout << "scripts/protection_test.txt    - Sistema de protección" << std::endl;
 		std::cout << "scripts/deadlock_banker.txt    - Algoritmo del Banquero" << std::endl;
 
-		std::cout << "\n[DEMOSTRACIÓN COMPLETA]" << std::endl;
+		print_section("\n[DEMOSTRACIÓN COMPLETA]");
 		std::cout << "scripts/demo_complete.txt      - Demo de todas las funciones" << std::endl;
 
-		std::cout << "\n========================================" << std::endl;
-		std::cout << "Uso: exec scripts/mem_fifo.txt" << std::endl;
-		std::cout << "========================================\n" << std::endl;
-		}
+		print_header("\n========================================");
+		std::cout << colorize("Uso:", Colors::BOLD) << " exec scripts/mem_fifo.txt" << std::endl;
+		print_header("========================================\n");
+	}
 	else {
-		std::cout << "[ERROR] Comando desconocido. Use 'help'." << std::endl;
+		print_error("Comando desconocido. Use 'help'.");
 	}
 }
