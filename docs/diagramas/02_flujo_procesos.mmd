@@ -1,26 +1,21 @@
+cd /c/Users/jmflo/kernel-sim
+
+cat > docs/diagrams/02_flujo_procesos.mmd << 'EOF'
 stateDiagram-v2
-    [*] --> NEW: new &lt;burst&gt;
-    NEW --> READY: Scheduler add_process()
+    [*] --> NEW: new proceso
+    NEW --> READY: Scheduler add
     
     READY --> RUNNING: dispatch()
     
-    RUNNING --> READY: Preemption (Quantum agotado)
-    RUNNING --> WAITING: I/O Request o Sync Wait
-    RUNNING --> TERMINATED: burst_time == 0
+    RUNNING --> READY: Quantum agotado
+    RUNNING --> WAITING: I/O Request
+    RUNNING --> TERMINATED: burst == 0
     
-    WAITING --> READY: I/O Complete o Resource Ready
+    WAITING --> READY: I/O Complete
     
     TERMINATED --> [*]
-    
-    note right of RUNNING
-        Ejemplo Demo
-        T=0: P1,P2,P3 → READY
-        T=1: P1 → RUNNING
-        T=3: P1 → READY (Q=2)
-        T=5: P2 → READY (Q=2)
-        T=13: P3 → TERMINATED
-    end note
-    
-    note right of READY
-        Cola READY (T=23)
-        - PID 4
+EOF
+
+git add docs/diagrams/02_flujo_procesos.mmd
+git commit -m "Fix diagram 02: remove notes (GitHub limitation)"
+git push origin main

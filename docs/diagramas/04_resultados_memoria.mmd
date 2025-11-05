@@ -1,27 +1,22 @@
-graph LR
-    subgraph Resultados["Resultados Memoria Virtual"]
-        direction TB
-        
-        subgraph FIFO["FIFO - First In First Out"]
-            F1["31 Accesos<br/>15 Fallos<br/>16 Hits<br/>Tasa: 51.6%"]
-        end
-        
-        subgraph LRU["LRU - Least Recently Used"]
-            L1["31 Accesos<br/>12 Fallos<br/>19 Hits<br/>Tasa: 61.3%"]
-        end
-        
-        subgraph PFF["PFF - Page Fault Frequency"]
-            P1["31 Accesos<br/>14 Fallos<br/>17 Hits<br/>Tasa: 54.8%"]
-        end
-        
-        Comparacion["Conclusión:<br/>LRU ofrece mejor rendimiento<br/>aprovechando localidad temporal"]
-        
-        FIFO --> Comparacion
-        LRU --> Comparacion
-        PFF --> Comparacion
+cat > docs/diagrams/04_resultados_memoria.mmd << 'EOF'
+%%{init: {'theme':'base'}}%%
+graph TB
+    subgraph Comparativa["Comparativa de Algoritmos"]
+        FIFO["FIFO<br/>Fallos: 15/31<br/>Hits: 51.6%"]
+        LRU["LRU<br/>Fallos: 12/31<br/>Hits: 61.3%"]
+        PFF["PFF<br/>Fallos: 14/31<br/>Hits: 54.8%"]
     end
     
-    style F1 fill:#ffccbc
-    style L1 fill:#c8e6c9
-    style P1 fill:#fff9c4
-    style Comparacion fill:#bbdefb,stroke:#1976d2,stroke-width:3px
+    FIFO --> Winner["LRU es el mejor"]
+    LRU --> Winner
+    PFF --> Winner
+    
+    style FIFO fill:#ffccbc
+    style LRU fill:#c8e6c9
+    style PFF fill:#fff9c4
+    style Winner fill:#bbdefb,stroke:#1976d2,stroke-width:3px
+EOF
+
+git add docs/diagrams/04_resultados_memoria.mmd
+git commit -m "Fix diagram 04: simplify structure"
+git push origin main
