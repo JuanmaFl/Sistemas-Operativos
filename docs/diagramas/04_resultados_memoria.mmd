@@ -1,22 +1,27 @@
-%%{init: {'theme':'base'}}%%
-graph TD
-    subgraph Results["Resultados Experimentales - Memoria"]
+graph LR
+    subgraph Resultados["Resultados Memoria Virtual"]
         direction TB
         
-        subgraph Stats["Estadísticas por Algoritmo"]
-            FIFO["<b>FIFO</b><br/>Accesos: 6<br/>Fallos: 5<br/>Hit Rate: 16.67%"]
-            LRU["<b>LRU</b><br/>Accesos: 11<br/>Fallos: 9<br/>Hit Rate: 18.18%"]
-            PFF_s["<b>PFF</b><br/>Accesos: 19<br/>Fallos: 14<br/>Hit Rate: 26.32%"]
+        subgraph FIFO["FIFO - First In First Out"]
+            F1["31 Accesos<br/>15 Fallos<br/>16 Hits<br/>Tasa: 51.6%"]
         end
         
-        subgraph Frames["Estado Final de Marcos"]
-            Frame1["Marcos 0-13: OCUPADOS<br/>PID 1"]
-            Frame2["Marcos 14-15: LIBRES"]
+        subgraph LRU["LRU - Least Recently Used"]
+            L1["31 Accesos<br/>12 Fallos<br/>19 Hits<br/>Tasa: 61.3%"]
         end
+        
+        subgraph PFF["PFF - Page Fault Frequency"]
+            P1["31 Accesos<br/>14 Fallos<br/>17 Hits<br/>Tasa: 54.8%"]
+        end
+        
+        Comparacion["Conclusión:<br/>LRU ofrece mejor rendimiento<br/>aprovechando localidad temporal"]
+        
+        FIFO --> Comparacion
+        LRU --> Comparacion
+        PFF --> Comparacion
     end
     
-    style FIFO fill:#ffccbc
-    style LRU fill:#fff9c4
-    style PFF_s fill:#c8e6c9
-    style Frame1 fill:#bbdefb
-    style Frame2 fill:#f5f5f5
+    style F1 fill:#ffccbc
+    style L1 fill:#c8e6c9
+    style P1 fill:#fff9c4
+    style Comparacion fill:#bbdefb,stroke:#1976d2,stroke-width:3px
