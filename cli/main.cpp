@@ -25,13 +25,13 @@ void setup_console_utf8() {
     dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
     SetConsoleMode(hOut, dwMode);
 #else
-    // En Linux/Mac, UTF-8 suele estar habilitado por defecto
+    
     std::cout.imbue(std::locale(""));
 #endif
 }
 
 int main(int argc, char* argv[]) {
-    // ✨ NUEVO: Configurar UTF-8 y colores
+    // Configurar UTF-8 y colores
     setup_console_utf8();
 
     // El constructor de 'kernel' ya imprime la cabecera (ahora con UTF-8)

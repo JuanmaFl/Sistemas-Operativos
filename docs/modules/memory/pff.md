@@ -1,4 +1,4 @@
-# 📊 PFF (Page Fault Frequency)
+#  PFF (Page Fault Frequency)
 
 **Ubicación:** `modules/mem/memory_manager.cpp`
 

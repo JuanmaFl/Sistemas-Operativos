@@ -166,7 +166,7 @@ bool KernelSimulator::kill_process(int pid) {
 // IMPLEMENTACIÓN DE COMANDOS DE MEMORIA
 
 
-// ⭐️ FUNCION ANTERIOR RENOMBRADA: Usada ahora por la CLI
+// FUNCION ANTERIOR RENOMBRADA: Usada ahora por la CLI
 void KernelSimulator::access_memory_cli(int virtual_address) {
     // 1. Obtener el proceso que está RUNNING
     int pid = scheduler->get_running_process_id();
@@ -180,7 +180,7 @@ void KernelSimulator::access_memory_cli(int virtual_address) {
     this->access_memory(pid, virtual_address);
 }
 
-//  FUNCION PRINCIPAL DE ACCESO (Ahora toma PID y Address)
+//  FUNCION PRINCIPAL DE ACCESO 
 void KernelSimulator::access_memory(int pid, int virtual_address) {
     // Obtener el proceso por ID para acceder a su tabla de páginas
     std::shared_ptr<Process> p = get_process_by_id(pid);
@@ -203,7 +203,7 @@ void KernelSimulator::check_for_interrupts() {
     // Lógica para revisar si hay interrupciones (sin implementar)
 }
 
-// ⭐ NUEVO: Helper para obtener proceso por ID (necesario para el desbloqueo y acceso)
+// Helper para obtener proceso por ID (necesario para el desbloqueo y acceso)
 std::shared_ptr<Process> KernelSimulator::get_process_by_id(int pid) {
     auto it = std::find_if(all_processes.begin(), all_processes.end(),
         [pid](const std::shared_ptr<Process>& p) { return p->id == pid; });

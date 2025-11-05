@@ -45,7 +45,9 @@ kernel-sim/
 │   ├── process.h        # PCB (Process Control Block)
 │   ├── deadlock_detector.cpp  # Algoritmo del Banquero
 │   ├── protection.cpp   # Sistema de protección (Rings)
-│   └── syscall_handler.cpp    # Manejador de syscalls
+│   ├── syscall_handler.cpp    # Manejador de syscalls
+│   ├── philosophers.cpp    # Cena de los filósofos
+│   └── sync.cpp
 │
 ├── modules/             # Módulos del sistema
 │   ├── cpu/            # Planificación de procesos
@@ -269,7 +271,7 @@ help                       # Ver todos los comandos
 
 ---
 
-## 📊 Scripts de Experimentación
+##  Scripts de Experimentación
 
 ### Memoria Virtual
 - `mem_fifo.txt` - Experimento con FIFO
@@ -357,7 +359,7 @@ sim> exec ../scripts/demo_complete.txt
 
 ---
 
-## 📚 Documentación
+##  Documentación
 
 ### Estructura de Documentación
 

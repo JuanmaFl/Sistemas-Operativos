@@ -157,7 +157,7 @@ void Scheduler::unblock_process(std::shared_ptr<Process> p) {
 	}
 }
 
-//  IMPLEMENTACIÓN DEL COMANDO KILL (Corregido) 
+//  IMPLEMENTACIÓN DEL COMANDO KILL 
 
 /**
  * @brief Termina el proceso con el ID especificado, sin importar su estado.

@@ -1,4 +1,4 @@
-# 💿 Planificación de Disco
+#  Planificación de Disco
 
 **Ubicación:** `modules/disk/disk_scheduler.h`, `modules/disk/disk_scheduler.cpp`
 

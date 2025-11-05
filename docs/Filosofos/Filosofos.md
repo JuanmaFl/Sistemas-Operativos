@@ -1,4 +1,4 @@
-# 🍝 Cena de los Filósofos
+# Cena de los Filósofos
 
 **Ubicación:** `kernel/philosophers.h`, `kernel/philosophers.cpp`
 
